@@ -10,13 +10,13 @@ ARG NODE_VERSION="lts/*"
 RUN if [ "${INSTALL_NODE}" = "true" ]; then su vscode -c "source /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
 
 # [Option] Install Azure CLI
-ARG INSTALL_AZURE_CLI="false"
+ARG INSTALL_AZURE_CLI="true"
 COPY library-scripts/azcli-debian.sh /tmp/library-scripts/
 RUN if [ "$INSTALL_AZURE_CLI" = "true" ]; then bash /tmp/library-scripts/azcli-debian.sh; fi \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
 
 # [Option] Install doxygen
-ARG INSTALL_DOXYGEN="false"
+ARG INSTALL_DOXYGEN="true"
 COPY library-scripts/get-doxygen.sh /tmp/library-scripts/
 RUN if [ "$INSTALL_DOXYGEN" = "true" ]; then bash /tmp/library-scripts/get-doxygen.sh; fi \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
