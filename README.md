@@ -6,6 +6,12 @@ Simple wrapper around the eternal return black survival documentation.
 
 Havent done too many C# projects.
 
+
+## References
+
+* https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test
+* https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-sln
+
 ## Donate
 
 If you would like to motivate me to spend more time improving open source projects please consider donating.
