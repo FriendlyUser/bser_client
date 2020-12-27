@@ -13,5 +13,5 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 export DEBIAN_FRONTEND=noninteractive
 apt-get update -y
-apt-get install doxygen -y
+apt-get install doxygen graphviz -y
 echo "done installing debian"
