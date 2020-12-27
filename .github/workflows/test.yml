@@ -1,0 +1,16 @@
+name: Run Test cases
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Dotnet Side by Side testing sample
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '5.0.101'
+      - run: dotnet build BserClient.Tests
+      - run: dotnet test BserClient.Tests
