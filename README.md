@@ -7,6 +7,16 @@ Simple wrapper around the eternal return black survival documentation.
 Havent done too many C# projects.
 
 
+```bash
+dotnet new sln -n BserClient
+dotnet new console -o BserClient.Cmd
+dotnet new classlib -o BserClient
+dotnet new classlib -o BserClient.Tests
+dotnet sln BserClient.sln add BserClient.Cmd/BserClient.Cmd.csproj
+dotnet sln BserClient.sln add BserClient/BserClient.csproj --solution-folder .
+dotnet sln BserClient.sln add BserClient.Tests/BserClient.Tests.csproj --solution-folder .
+```
+
 ## References
 
 * https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test
