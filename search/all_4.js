@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['usergameobj_16',['UserGameObj',['../classBserClient_1_1Types_1_1UserGameObj.html',1,'BserClient::Types']]],
-  ['userrankobj_17',['UserRankObj',['../classBserClient_1_1Types_1_1UserRankObj.html',1,'BserClient::Types']]]
+  ['printresperrors_17',['PrintRespErrors',['../classBserClient_1_1BserHttpClient.html#a56e8ed3d8fdfd58e31c3924a151d0c58',1,'BserClient::BserHttpClient']]]
 ];
