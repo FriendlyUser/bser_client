@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+
+    <!-- Author Settings -->
+    <Authors>friendlyuser</Authors>
+    <Description>Wrapper around the bser api</Description>
     <!-- NuGet settings -->
     <PackageId>BserClient</PackageId>
     <PackageTags>BserClient;BSER;Http;Api;</PackageTags>

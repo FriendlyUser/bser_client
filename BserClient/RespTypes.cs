@@ -35,4 +35,10 @@ namespace BserClient.Types
         // query string to get next games pass in for pagination
         public int next { get; set; }
     }
+
+    [ExcludeFromCodeCoverage]
+    public class BserUserStats : BserRespData
+    {
+        public List<UserStatsCharacterStatsObj> userStats {get; set;}
+    }
 }

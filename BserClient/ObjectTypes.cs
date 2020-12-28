@@ -178,11 +178,11 @@ namespace BserClient.Types
         public double top3 { get; set; }
         public double top5 { get; set; }
         public double top7 { get; set; }
-        public UserStatscCharacterStatsObj characterStats { get; set; }
+        public List<UserStatsCharacterStatsObj> characterStats { get; set; }
     }
 
     [ExcludeFromCodeCoverage]
-    public class UserStatscCharacterStatsObj
+    public class UserStatsCharacterStatsObj
     {
         public int characterCode { get; set; }
         public int totalGames { get; set; }

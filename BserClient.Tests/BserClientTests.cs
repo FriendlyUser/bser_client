@@ -73,14 +73,15 @@ namespace BserClient.Tests
         public async Task TestGetUserGames()
         {
             // Testing first place 189543
-            var data = await client.GetUserGames(userNum);
+            var data = await client.GetUserStats(userNum);
             // string responseBody = await response.Content.ReadAsStringAsync();
-            _testOutputHelper.WriteLine(data.code.ToString());
+            string debugMessage = String.Format("{0} - {1}", data.code, data.message);
+            _testOutputHelper.WriteLine(debugMessage);
             int code = data.code;
             string message = data.message;
             Assert.Equal(200, code);
             Assert.Equal("Success", message);
-            Assert.IsType<List<UserGameObj>>(data.userGames);
+            Assert.IsType<List<UserStatsObj>>(data.userStats);
         }
     }
 }

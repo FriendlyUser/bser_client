@@ -205,7 +205,7 @@ namespace BserClient
                 /// <summary>
         /// Fetch game data by metadata - calls /v1/user/games/{userNum}
         /// </summary>
-        public async Task<BserUserGames> GetUserStats(int userNum, int seasonId = 1)
+        public async Task<BserUserStats> GetUserStats(int userNum, int seasonId = 1)
         {
             await Throttler.WaitAsync();
             // range of game modes
@@ -216,7 +216,7 @@ namespace BserClient
                 return null;
             }
             string endpoint = String.Format("/v1/user/stats/{0}/{1}", userNum, seasonId);
-            BserUserGames userGames;
+            BserUserStats userStats;
             try
             {
                 var response = await Client.GetAsync(endpoint);
@@ -226,10 +226,10 @@ namespace BserClient
                 // add error handling
                 // response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
-                userGames = JsonSerializer.Deserialize<BserUserGames>(responseBody);
+                userStats = JsonSerializer.Deserialize<BserUserStats>(responseBody);
                 if (!response.IsSuccessStatusCode)
                 {
-                    PrintRespErrors(userGames);
+                    PrintRespErrors(userStats);
                 }
             }
             finally
