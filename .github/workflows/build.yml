@@ -7,8 +7,6 @@ on:
   release:
     types: 
       - published
-      - created
-      - prerelease
 
 env:
   # Stop wasting time caching packages
