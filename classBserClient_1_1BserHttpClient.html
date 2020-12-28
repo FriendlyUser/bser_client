@@ -84,14 +84,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7529c7f39111af3d99be0a627de95f54"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBserClient_1_1BserHttpClient.html#a7529c7f39111af3d99be0a627de95f54">BserHttpClient</a> (string apiKey, int rateLimit=1, int burstLimit=2)</td></tr>
 <tr class="separator:a7529c7f39111af3d99be0a627de95f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07b18d80536057af2fed00597eb40774"><td class="memItemLeft" align="right" valign="top">async Task&lt; <a class="el" href="classBserClient_1_1Types_1_1BserData.html">BserData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBserClient_1_1BserHttpClient.html#a07b18d80536057af2fed00597eb40774">GetData</a> (string metaType=&quot;hash&quot;)</td></tr>
-<tr class="memdesc:a07b18d80536057af2fed00597eb40774"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch game data by metadata  <a href="classBserClient_1_1BserHttpClient.html#a07b18d80536057af2fed00597eb40774">More...</a><br /></td></tr>
+<tr class="memdesc:a07b18d80536057af2fed00597eb40774"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch game data by metadata - calls /v1/data/{metaType}  <a href="classBserClient_1_1BserHttpClient.html#a07b18d80536057af2fed00597eb40774">More...</a><br /></td></tr>
 <tr class="separator:a07b18d80536057af2fed00597eb40774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a779cc4cb176b722e51e8207e710ec749"><td class="memItemLeft" align="right" valign="top">async Task&lt; <a class="el" href="classBserClient_1_1Types_1_1BserRankTop.html">BserRankTop</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBserClient_1_1BserHttpClient.html#a779cc4cb176b722e51e8207e710ec749">GetRankTop</a> (int seasonId=0, int matchingTeamMode=1)</td></tr>
+<tr class="memdesc:a779cc4cb176b722e51e8207e710ec749"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch game data by metadata - calls /v1/rank/top/{seasonId}/{matchingTeamMode}  <a href="classBserClient_1_1BserHttpClient.html#a779cc4cb176b722e51e8207e710ec749">More...</a><br /></td></tr>
+<tr class="separator:a779cc4cb176b722e51e8207e710ec749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a472467442e44a7d3798cc3248e022e0c"><td class="memItemLeft" align="right" valign="top">async Task&lt; <a class="el" href="classBserClient_1_1Types_1_1BserRankUser.html">BserRankUser</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBserClient_1_1BserHttpClient.html#a472467442e44a7d3798cc3248e022e0c">GetRankUser</a> (string userNum, int seasonId=0, int matchingTeamMode=1)</td></tr>
+<tr class="memdesc:a472467442e44a7d3798cc3248e022e0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch game data by metadata - calls /v1/rank/{userNum}/{seasonId}{matchingTeamMode}  <a href="classBserClient_1_1BserHttpClient.html#a472467442e44a7d3798cc3248e022e0c">More...</a><br /></td></tr>
+<tr class="separator:a472467442e44a7d3798cc3248e022e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a62bd03e9b2078d6a2e1eba6b5d486ba8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBserClient_1_1BserHttpClient.html#a62bd03e9b2078d6a2e1eba6b5d486ba8">PrintRespErrors</a> (<a class="el" href="classBserClient_1_1Types_1_1BserData.html">BserData</a> bserData)</td></tr>
-<tr class="memdesc:a62bd03e9b2078d6a2e1eba6b5d486ba8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output code and message for erronous requests  <a href="classBserClient_1_1BserHttpClient.html#a62bd03e9b2078d6a2e1eba6b5d486ba8">More...</a><br /></td></tr>
-<tr class="separator:a62bd03e9b2078d6a2e1eba6b5d486ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56e8ed3d8fdfd58e31c3924a151d0c58"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBserClient_1_1BserHttpClient.html#a56e8ed3d8fdfd58e31c3924a151d0c58">PrintRespErrors</a> (<a class="el" href="classBserClient_1_1Types_1_1BserRespData.html">BserRespData</a> bserData)</td></tr>
+<tr class="memdesc:a56e8ed3d8fdfd58e31c3924a151d0c58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output code and message for erronous requests  <a href="classBserClient_1_1BserHttpClient.html#a56e8ed3d8fdfd58e31c3924a151d0c58">More...</a><br /></td></tr>
+<tr class="separator:a56e8ed3d8fdfd58e31c3924a151d0c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -178,7 +184,7 @@ HttpClient&#160;</td><td class="memItemRight" valign="bottom"><b>Client</b> = ne
 </table>
 </div><div class="memdoc">
 
-<p>Fetch game data by metadata </p>
+<p>Fetch game data by metadata - calls /v1/data/{metaType} </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">metaType</td><td>Meta Type, use 'hash' to find all types</td></tr>
@@ -188,8 +194,90 @@ HttpClient&#160;</td><td class="memItemRight" valign="bottom"><b>Client</b> = ne
 
 </div>
 </div>
-<a id="a62bd03e9b2078d6a2e1eba6b5d486ba8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62bd03e9b2078d6a2e1eba6b5d486ba8">&#9670;&nbsp;</a></span>PrintRespErrors()</h2>
+<a id="a779cc4cb176b722e51e8207e710ec749"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a779cc4cb176b722e51e8207e710ec749">&#9670;&nbsp;</a></span>GetRankTop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt;<a class="el" href="classBserClient_1_1Types_1_1BserRankTop.html">BserRankTop</a>&gt; BserClient.BserHttpClient.GetRankTop </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>seasonId</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>matchingTeamMode</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fetch game data by metadata - calls /v1/rank/top/{seasonId}/{matchingTeamMode} </p>
+
+</div>
+</div>
+<a id="a472467442e44a7d3798cc3248e022e0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a472467442e44a7d3798cc3248e022e0c">&#9670;&nbsp;</a></span>GetRankUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt;<a class="el" href="classBserClient_1_1Types_1_1BserRankUser.html">BserRankUser</a>&gt; BserClient.BserHttpClient.GetRankUser </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>userNum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>seasonId</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>matchingTeamMode</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fetch game data by metadata - calls /v1/rank/{userNum}/{seasonId}{matchingTeamMode} </p>
+
+</div>
+</div>
+<a id="a56e8ed3d8fdfd58e31c3924a151d0c58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56e8ed3d8fdfd58e31c3924a151d0c58">&#9670;&nbsp;</a></span>PrintRespErrors()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,7 +288,7 @@ HttpClient&#160;</td><td class="memItemRight" valign="bottom"><b>Client</b> = ne
         <tr>
           <td class="memname">static void BserClient.BserHttpClient.PrintRespErrors </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classBserClient_1_1Types_1_1BserData.html">BserData</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classBserClient_1_1Types_1_1BserRespData.html">BserRespData</a>&#160;</td>
           <td class="paramname"><em>bserData</em></td><td>)</td>
           <td></td>
         </tr>
