@@ -41,7 +41,6 @@ jobs:
       - name: Pack
         if: matrix.os == 'ubuntu-latest'
         run: |
-          cd BserClient
           dotnet pack -v normal -c Release --no-restore --include-symbols --include-source -p:PackageVersion=$GITHUB_RUN_ID $PROJECT_NAME/$PROJECT_NAME.*proj
       - name: Upload Artifact
         if: matrix.os == 'ubuntu-latest'
