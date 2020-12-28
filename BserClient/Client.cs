@@ -3,9 +3,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using BserClient.Types;
-
 namespace BserClient
 {
     /// <summary>
@@ -21,11 +19,11 @@ namespace BserClient
         public HttpClient Client { get; } = new HttpClient();
         private SemaphoreSlim Throttler { get; } = null;
         private int RateLimit = 1;
-
+        private string Version = "v1";
         /// <param name="apikey">Bser apikey from developer api portal.</param>
         /// <param name="rateLimit">Rate limit for requests (should be 1 for personal apikey).</param>
         /// <param name="burstLimit">Burst limit for requests (should be 2 for personal apikey).</param>
-        public BserHttpClient(string apiKey, int rateLimit = 1, int burstLimit = 2)
+        public BserHttpClient(string apiKey, string version="v1", int rateLimit = 1, int burstLimit = 2)
         {
             /// \todo TODO figure out how to handle urls when v2 comes out
             Client.BaseAddress = new Uri("https://open-api.bser.io");
@@ -33,9 +31,8 @@ namespace BserClient
             Client.DefaultRequestHeaders.Add("Accept", "application/json");
             Client.DefaultRequestHeaders.Add("x-api-key", apiKey);
             RateLimit = rateLimit;
-            // example left in case I need an user-agent
-            // Client.DefaultRequestHeaders.Add("User-Agent",
-            //     "HttpClientFactory-Sample");
+            Version = version;
+            Client.DefaultRequestHeaders.Add("User-Agent", "BserClient");
             // rateLimit is 1 requests per second
             // burstLimit is 2 requests per second
             Throttler = new SemaphoreSlim(rateLimit, burstLimit);
@@ -45,11 +42,12 @@ namespace BserClient
         /// Fetch game data by metadata - calls /v1/data/{metaType}
         /// </summary>
         /// <param name="metaType">Meta Type, use 'hash' to find all types</param>
-        public async Task<BserData> GetData(string metaType = "hash")
-        {
+        public async Task<BserMetaData> GetData()
+        {   
+            string metaType = "hash";
             await Throttler.WaitAsync();
             string endpoint = String.Format("/v1/data/{0}", metaType);
-            BserData bserData;
+            BserMetaData bserData;
             try
             {
                 var response = await Client.GetAsync(endpoint);
@@ -59,7 +57,39 @@ namespace BserClient
                 // add error handling
                 // response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
-                bserData = JsonSerializer.Deserialize<BserData>(responseBody);
+                bserData = JsonSerializer.Deserialize<BserMetaData>(responseBody);
+                if (!response.IsSuccessStatusCode)
+                {
+                    PrintRespErrors(bserData);
+                }
+            }
+            finally
+            {
+                // here we release the throttler immediately
+                Throttler.Release();
+            }
+            return bserData;
+        }
+
+        /// <summary>
+        /// Overloaded function that can get values for given metadata
+        /// \todo figure out how to enum the possible values. Since as ActionCost
+        /// </summary>
+        public async Task<BserTypeData> GetData(string metaType)
+        {
+            await Throttler.WaitAsync();
+            string endpoint = String.Format("/v1/data/{0}", metaType);
+            BserTypeData bserData;
+            try
+            {
+                var response = await Client.GetAsync(endpoint);
+
+                // let's wait here for 1 second to honor the API's rate limit                         
+                await Task.Delay(1000 / RateLimit);
+                // add error handling
+                // response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+                bserData = JsonSerializer.Deserialize<BserTypeData>(responseBody);
                 if (!response.IsSuccessStatusCode)
                 {
                     PrintRespErrors(bserData);
@@ -202,7 +232,7 @@ namespace BserClient
             return userGames;
         }
 
-                /// <summary>
+        /// <summary>
         /// Fetch game data by metadata - calls /v1/user/games/{userNum}
         /// </summary>
         public async Task<BserUserStats> GetUserStats(int userNum, int seasonId = 1)
@@ -248,5 +278,8 @@ namespace BserClient
             string message = String.Format("{0} - {1}", bserData.code, bserData.message);
             Console.WriteLine(message);
         }
+
+        /// https://stackoverflow.com/questions/21316339/how-to-loop-through-a-dictionary-to-get-all-class-properties
+        /// utility function to get all classes
     }
 }

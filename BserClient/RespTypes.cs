@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+// https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods
+using BserClient.Extensions;
 namespace BserClient.Types
 {
     // standard response data from Bser request
@@ -10,10 +12,21 @@ namespace BserClient.Types
         public string message { get; set; }
     }
 
+
+
     [ExcludeFromCodeCoverage]
-    public class BserData : BserRespData
+    public class BserMetaData : BserRespData
     {
         public GameDataObj data { get; set; }
+    }
+
+    /// <summary>
+    /// Arbitrary data returned from the bser api given a data type.
+    /// </summary>
+    [ExcludeFromCodeCoverage]
+    public class BserTypeData : BserRespData    
+    {
+        List<Dictionary<string, object>> data {get; set; }
     }
 
     [ExcludeFromCodeCoverage]

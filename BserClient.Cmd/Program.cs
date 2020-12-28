@@ -9,7 +9,7 @@ namespace BserClient.Cmd
         public static async Task Main()
         {
             /// \todo https://open-api.bser.io/v1/data/ItemWeapon get all item weapon datas
-            ///
+            /// and list all types programatically
             string apiKey = Environment.GetEnvironmentVariable("BSER_APIKEY");
             // Set up (called once per test)
             var client = new BserHttpClient(apiKey);

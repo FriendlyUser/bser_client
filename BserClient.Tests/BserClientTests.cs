@@ -83,5 +83,18 @@ namespace BserClient.Tests
             Assert.Equal("Success", message);
             Assert.IsType<List<UserStatsCharacterStatsObj>>(data.userStats);
         }
+
+        [Fact]
+        public async Task TestGetItem()
+        {
+            BserTypeData itemData = await client.GetData("ActionCost");
+            int code = itemData.code;
+            string message = itemData.message;
+            string debugMessage = String.Format("{0} - {1}", itemData.code, itemData.message);
+            _testOutputHelper.WriteLine(debugMessage);
+            Assert.Equal(200, code);
+            Assert.Equal("Success", message);
+            
+        }
     }
 }
