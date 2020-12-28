@@ -5,8 +5,8 @@ on:
       - main
   pull_request:
   release:
-    types:
-      - published
+    types: [published, created, prerelease]
+
 env:
   # Stop wasting time caching packages
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
