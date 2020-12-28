@@ -23,7 +23,7 @@ namespace BserClient
         /// <param name="burstLimit">Burst limit for requests (should be 2 for personal apikey).</param>
         public BserHttpClient(string apiKey, int rateLimit = 1, int burstLimit = 2) 
         {
-            /// \todo TODO figure out how to handle urls when
+            /// \todo TODO figure out how to handle urls when v2 comes out
             Client.BaseAddress = new Uri("https://open-api.bser.io");
             // GitHub API versioning
             Client.DefaultRequestHeaders.Add("Accept", "application/json");
@@ -44,6 +44,7 @@ namespace BserClient
         public async Task<BserData> GetData(string metaType = "hash") {
             await Throttler.WaitAsync();
             string endpoint = String.Format("/v1/data/{0}", metaType);
+            BserData bserData;
             try
             {
                 var response = await Client.GetAsync(endpoint);
@@ -52,18 +53,11 @@ namespace BserClient
                 await Task.Delay(1000 / RateLimit);
                 // add error handling
                 // response.EnsureSuccessStatusCode();
-                if (response.IsSuccessStatusCode)
+                string responseBody = await response.Content.ReadAsStringAsync();
+                bserData = JsonSerializer.Deserialize<BserData>(responseBody);
+                if (!response.IsSuccessStatusCode)
                 {
-                    string responseBody = await response.Content.ReadAsStringAsync();
-                    BserData bserData = JsonSerializer.Deserialize<BserData>(responseBody);
-                    return bserData;
-                } else {
-                    // check code and output messages
-                    // check message
-                    string responseBody = await response.Content.ReadAsStringAsync();
-                    BserData bserData = JsonSerializer.Deserialize<BserData>(responseBody);
                     PrintRespErrors(bserData);
-                    return bserData;
                 }
             }
             finally
@@ -71,7 +65,7 @@ namespace BserClient
                 // here we release the throttler immediately
                 Throttler.Release();
             }
-            // return result;
+            return bserData;
         }
         
         /// <summary>
