@@ -10,7 +10,8 @@ namespace BserClient
 {
     /// <summary>
     /// Black Survival Eternal Return (bser) Http Client
-    /// Implements rate limiting and the v1 endpoints
+    /// Implements rate limiting and the v1 endpoints.
+    /// \todo label this package as v1 (intend to support v2 as a hobby)
     /// </summary>
     public class BserHttpClient
     {
@@ -153,6 +154,49 @@ namespace BserClient
                 Throttler.Release();
             }
             return bserRankUser;
+        }
+
+        /// <summary>
+        /// Fetch game data by metadata - calls /v1/user/games/{userNum}
+        /// </summary>
+        public async Task<BserUserGames> GetUserGames(string userNum, string next = "")
+        {
+            await Throttler.WaitAsync();
+            string endpoint;
+            if (next == "") {
+                endpoint = String.Format("/v1/user/games/{0}", userNum);
+            } else {
+                 endpoint = String.Format("/v1/user/games/{0}?next={1}", userNum, next);
+            }
+            // range of game modes
+            if (userNum == "")
+            {
+                // matching team modes are 1, 2 and 3
+                Console.WriteLine("userNum should be valid String");
+                return null;
+            }
+            BserUserGames userGames;
+            try
+            {
+                var response = await Client.GetAsync(endpoint);
+
+                // let's wait here for 1 second to honor the API's rate limit                         
+                await Task.Delay(1000 / RateLimit);
+                // add error handling
+                // response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+                userGames = JsonSerializer.Deserialize<BserUserGames>(responseBody);
+                if (!response.IsSuccessStatusCode)
+                {
+                    PrintRespErrors(userGames);
+                }
+            }
+            finally
+            {
+                // here we release the throttler immediately
+                Throttler.Release();
+            }
+            return userGames;
         }
 
         /// <summary>

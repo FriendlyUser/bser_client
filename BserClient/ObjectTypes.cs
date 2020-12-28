@@ -1,5 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
-
+using System.Collections.Generic;
 namespace BserClient.Types
 {
     [ExcludeFromCodeCoverage]
@@ -89,6 +89,68 @@ namespace BserClient.Types
         public string nickname { get; set; }
         public double rank { get; set; }
         public double mmr { get; set; }
+    }
+
+    [ExcludeFromCodeCoverage]
+    public class UserGameObj
+    {
+        public int userNum { get; set; }
+        public string nickname { get; set; }
+        public double gameId { get; set; }
+        public double seasonId { get; set; }
+        public double matchingMode { get; set; }
+        public double matchingTeamMode { get; set; }
+        public double characterNum { get; set; }
+        public double characterLevel { get; set; }
+        public double gameRank { get; set; }
+        public double playerKill { get; set; }
+        public double playerAssistant { get; set; }
+        public double monsterKill { get; set; }
+        public double bestWeapon { get; set; }
+        public double bestWeaponLevel { get; set; }
+        public IDictionary<string, double> masteryLevel { get; set; }
+        public IDictionary<string, double> equipment { get; set; }
+        public double versionMajor { get; set; }
+        public double versionMinor { get; set; }
+        public IDictionary<string, double> skillLevelInfo { get; set; }
+        public IDictionary<string, double> skillOrderInfo { get; set; }
+        public double maxHp { get; set; }
+        public double maxSp { get; set; }
+        public double attackPower { get; set; }
+        public double defense { get; set; }
+        public double hpRegen { get; set; }
+        public double spRegen { get; set; }
+        public double attackSpeed { get; set; }
+        public double moveSpeed { get; set; }
+        public double outOfCombatMoveSpeed { get; set; }
+        public double sightRange { get; set; }
+        public double attackRange { get; set; }
+        public double criticalStrikeChance { get; set; }
+        public double criticalStrikeDamage { get; set; }
+        public double coolDownReduction { get; set; }
+        public double lifeSteal { get; set; }
+        public double amplifierToMonster { get; set; }
+        public double trapDamage { get; set; }
+        public double gainExp { get; set; }
+        public string startDtm { get; set; }
+        public double duration { get; set; }
+        public double mmrBefore { get; set; }
+        public double damageToPlayer { get; set; }
+        public double damageToMonster { get; set; }
+        public double killerUserNum { get; set; }
+        public double playTime { get; set; }
+        public double watchTime { get; set; }
+        public double totalTime { get; set; }
+        public double botAdded { get; set; }
+        public double botRemain { get; set; }
+        public double restrictedAreaAccelerated { get; set; }
+        public double safeAreas { get; set; }
+        public string killer { get; set; }
+        public string killDetail { get; set; }
+        public string causeOfDeath { get; set; }
+        public double teamNumber { get; set; }
+        public double preMade { get; set; }
+        public double gainedNormalMmrKFactor { get; set; }
     }
 
 }

@@ -27,4 +27,12 @@ namespace BserClient.Types
     {
         public UserRankObj userRank { get; set; }
     }
+
+    [ExcludeFromCodeCoverage]
+    public class BserUserGames : BserRespData
+    {
+        public List<UserGameObj> userGames { get; set; }    
+        // query string to get next games pass in for pagination
+        public int next { get; set; }
+    }
 }
