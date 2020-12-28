@@ -5,7 +5,10 @@ on:
       - main
   pull_request:
   release:
-    types: [published, created, prerelease]
+    types: 
+      - published
+      - created
+      - prerelease
 
 env:
   # Stop wasting time caching packages

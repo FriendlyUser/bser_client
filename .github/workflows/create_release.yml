@@ -1,4 +1,4 @@
-name: Create Release and publish to pip
+name: Create Release
 
 on:
   push:
@@ -22,4 +22,4 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           draft: false
-          prerelease: false
+          prerelease: true
