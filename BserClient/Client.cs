@@ -13,6 +13,9 @@ namespace BserClient
     /// Implements rate limiting and the v1 endpoints.
     /// \todo label this package as v1 (intend to support v2 as a hobby)
     /// </summary>
+    /// <remark>
+    /// Consider making validators in a different class
+    /// </remark>
     public class BserHttpClient
     {
         public HttpClient Client { get; } = new HttpClient();
@@ -116,10 +119,9 @@ namespace BserClient
         /// <summary>
         /// Fetch game data by metadata - calls /v1/rank/{userNum}/{seasonId}{matchingTeamMode}
         /// </summary>
-        public async Task<BserRankUser> GetRankUser(string userNum, int seasonId = 0, int matchingTeamMode = 1)
+        public async Task<BserRankUser> GetRankUser(int userNum, int seasonId = 0, int matchingTeamMode = 1)
         {
             await Throttler.WaitAsync();
-            string endpoint = String.Format("/v1/rank/{0}/{1}/{2}", userNum, seasonId, matchingTeamMode);
             // range of game modes
             if (matchingTeamMode < 1 && matchingTeamMode > 3)
             {
@@ -132,6 +134,7 @@ namespace BserClient
                 Console.WriteLine("seasonId should be greater than 0");
                 return null;
             }
+            string endpoint = String.Format("/v1/rank/{0}/{1}/{2}", userNum, seasonId, matchingTeamMode);
             BserRankUser bserRankUser;
             try
             {
@@ -159,22 +162,60 @@ namespace BserClient
         /// <summary>
         /// Fetch game data by metadata - calls /v1/user/games/{userNum}
         /// </summary>
-        public async Task<BserUserGames> GetUserGames(string userNum, string next = "")
+        public async Task<BserUserGames> GetUserGames(int userNum, int next = 0)
         {
             await Throttler.WaitAsync();
             string endpoint;
-            if (next == "") {
+            // range of game modes
+            if (userNum < 0)
+            {
+                // matching team modes are 1, 2 and 3
+                Console.WriteLine("userNum should be valid Number");
+                return null;
+            }
+            if (next == 0) {
                 endpoint = String.Format("/v1/user/games/{0}", userNum);
             } else {
                  endpoint = String.Format("/v1/user/games/{0}?next={1}", userNum, next);
             }
+            BserUserGames userGames;
+            try
+            {
+                var response = await Client.GetAsync(endpoint);
+
+                // let's wait here for 1 second to honor the API's rate limit                         
+                await Task.Delay(1000 / RateLimit);
+                // add error handling
+                // response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+                userGames = JsonSerializer.Deserialize<BserUserGames>(responseBody);
+                if (!response.IsSuccessStatusCode)
+                {
+                    PrintRespErrors(userGames);
+                }
+            }
+            finally
+            {
+                // here we release the throttler immediately
+                Throttler.Release();
+            }
+            return userGames;
+        }
+
+                /// <summary>
+        /// Fetch game data by metadata - calls /v1/user/games/{userNum}
+        /// </summary>
+        public async Task<BserUserGames> GetUserStats(int userNum, int seasonId = 1)
+        {
+            await Throttler.WaitAsync();
             // range of game modes
-            if (userNum == "")
+            if (userNum < 0)
             {
                 // matching team modes are 1, 2 and 3
                 Console.WriteLine("userNum should be valid String");
                 return null;
             }
+            string endpoint = String.Format("/v1/user/stats/{0}/{1}", userNum, seasonId);
             BserUserGames userGames;
             try
             {

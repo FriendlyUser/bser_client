@@ -13,7 +13,7 @@ namespace BserClient.Tests
         // setup http client
         BserHttpClient client;
         // number 1 user should never get deleted.
-        string userNum = "189543";
+        int userNum = 189543;
         public BserTests(ITestOutputHelper testOutputHelper)
         {
             _testOutputHelper = testOutputHelper;

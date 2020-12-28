@@ -108,7 +108,9 @@ namespace BserClient.Types
         public double monsterKill { get; set; }
         public double bestWeapon { get; set; }
         public double bestWeaponLevel { get; set; }
+        /// \todo map to object inside of key value pair
         public IDictionary<string, double> masteryLevel { get; set; }
+        /// \todo map to object inside of key value pair
         public IDictionary<string, double> equipment { get; set; }
         public double versionMajor { get; set; }
         public double versionMinor { get; set; }
@@ -152,5 +154,43 @@ namespace BserClient.Types
         public double preMade { get; set; }
         public double gainedNormalMmrKFactor { get; set; }
     }
+
+    [ExcludeFromCodeCoverage]
+    public class UserStatsObj
+    {
+        public double seasonId { get; set; }
+        public double userNum { get; set; }
+        public double matchingMode { get; set; }
+        public double matchingTeamMode { get; set; }
+        public double mmr { get; set; }
+        public string nickname { get; set; }
+        public double rank { get; set; }
+        public double rankSize { get; set; }
+        public double totalGames { get; set; }
+        public double totalWins { get; set; }
+        public double rankPercent { get; set; }
+        public double averageRank { get; set; }
+        public double averageKills { get; set; }
+        public double averageAssistants { get; set; }
+        public double averageHunts { get; set; }
+        public double top1 { get; set; }
+        public double top2 { get; set; }
+        public double top3 { get; set; }
+        public double top5 { get; set; }
+        public double top7 { get; set; }
+        public UserStatscCharacterStatsObj characterStats { get; set; }
+    }
+
+    [ExcludeFromCodeCoverage]
+    public class UserStatscCharacterStatsObj
+    {
+        public int characterCode { get; set; }
+        public int totalGames { get; set; }
+        public int usages { get; set; }
+        public int maxKillings { get; set; }
+        public int top3 { get; set; }
+        public int top3Rate { get; set; }
+    }
+
 
 }
