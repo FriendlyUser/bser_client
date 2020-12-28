@@ -23,6 +23,7 @@ dotnet sln BserClient.sln add BserClient.Tests/BserClient.Tests.csproj --solutio
 
 * https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test
 * https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-sln
+* https://github.com/giraffe-fsharp/Giraffe (for .net build process)
 
 ## Donate
 

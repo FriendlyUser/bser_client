@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <!-- NuGet settings -->
+    <PackageId>BserClient</PackageId>
+    <PackageTags>BserClient;BSER;Http;Api;</PackageTags>
+    <PackageReleaseNotes>https://raw.githubusercontent.com/FriendlyUser/bser_client/master/RELEASE_NOTES.md</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/FriendlyUser/bser_client</PackageProjectUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/FriendlyUser/bser_client</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
