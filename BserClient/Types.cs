@@ -1,16 +1,20 @@
+using System.Diagnostics.CodeAnalysis;
+
 namespace BserClient.Types
 {
     // standard response data from Bser request
+    [ExcludeFromCodeCoverage]
     public class BserRespData
     {
         public int code { get; set; }
         public string message { get; set; }
     }
-
+    [ExcludeFromCodeCoverage]
     public class BserData : BserRespData
     {
         public BserGameObj data { get; set; }
     }
+    [ExcludeFromCodeCoverage]
     public class BserGameObj
     {
         public double ActionCost { get; set; }
