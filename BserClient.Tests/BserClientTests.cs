@@ -12,6 +12,8 @@ namespace BserClient.Tests
         private readonly ITestOutputHelper _testOutputHelper;
         // setup http client
         BserHttpClient client;
+        // number 1 user should never get deleted.
+        string userNum = "189543";
         public BserTests(ITestOutputHelper testOutputHelper)
         {
             _testOutputHelper = testOutputHelper;
@@ -34,8 +36,8 @@ namespace BserClient.Tests
             _testOutputHelper.WriteLine(debugMessage);
             int code = bserData.code;
             string message = bserData.message;
-            Assert.Equal(code, 200);
-            Assert.Equal(message, "Success");
+            Assert.Equal(200, code);
+            Assert.Equal("Success", message);
             Assert.IsType<GameDataObj>(bserData.data);
         }
 
@@ -48,8 +50,8 @@ namespace BserClient.Tests
             _testOutputHelper.WriteLine(debugMessage);
             int code = bserData.code;
             string message = bserData.message;
-            Assert.Equal(code, 200);
-            Assert.Equal(message, "Success");
+            Assert.Equal(200, code);
+            Assert.Equal("Success", message);
             Assert.IsType<List<UserRankObj>>(bserData.topRanks);
         }
 
@@ -57,14 +59,28 @@ namespace BserClient.Tests
         public async Task TestGetRankUser()
         {
             // Testing first place 189543
-            var bserData = await client.GetRankUser("189543", 1, 1);
-            // string responseBody = await response.Content.ReadAsStringAsync();
-            _testOutputHelper.WriteLine(bserData.code.ToString());
+            var bserData = await client.GetRankUser(userNum, 1, 1);
+            string debugMessage = String.Format("{0} - {1}", bserData.code, bserData.message);
+            _testOutputHelper.WriteLine(debugMessage);
             int code = bserData.code;
             string message = bserData.message;
-            Assert.Equal(code, 200);
-            Assert.Equal(message, "Success");
+            Assert.Equal(200, code);
+            Assert.Equal("Success", message);
             Assert.IsType<UserRankObj>(bserData.userRank);
+        }
+
+        [Fact]
+        public async Task TestGetUserGames()
+        {
+            // Testing first place 189543
+            var data = await client.GetUserGames(userNum);
+            // string responseBody = await response.Content.ReadAsStringAsync();
+            _testOutputHelper.WriteLine(data.code.ToString());
+            int code = data.code;
+            string message = data.message;
+            Assert.Equal(200, code);
+            Assert.Equal("Success", message);
+            Assert.IsType<List<UserGameObj>>(data.userGames);
         }
     }
 }
