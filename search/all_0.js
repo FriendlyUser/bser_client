@@ -7,6 +7,7 @@ var searchData=
   ['bserrankuser_4',['BserRankUser',['../classBserClient_1_1Types_1_1BserRankUser.html',1,'BserClient::Types']]],
   ['bserrespdata_5',['BserRespData',['../classBserClient_1_1Types_1_1BserRespData.html',1,'BserClient::Types']]],
   ['bserusergames_6',['BserUserGames',['../classBserClient_1_1Types_1_1BserUserGames.html',1,'BserClient::Types']]],
-  ['bserclient_20documentation_7',['BserClient Documentation',['../index.html',1,'']]],
-  ['types_8',['Types',['../namespaceBserClient_1_1Types.html',1,'BserClient']]]
+  ['bseruserstats_7',['BserUserStats',['../classBserClient_1_1Types_1_1BserUserStats.html',1,'BserClient::Types']]],
+  ['bserclient_20documentation_8',['BserClient Documentation',['../index.html',1,'']]],
+  ['types_9',['Types',['../namespaceBserClient_1_1Types.html',1,'BserClient']]]
 ];

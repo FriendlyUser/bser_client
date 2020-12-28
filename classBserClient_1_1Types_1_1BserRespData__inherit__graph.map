@@ -1,7 +1,8 @@
 <map id="BserClient.Types.BserRespData" name="BserClient.Types.BserRespData">
-<area shape="rect" id="node1" title=" " alt="" coords="5,81,212,108"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,212,133"/>
 <area shape="rect" id="node2" href="$classBserClient_1_1Types_1_1BserData.html" title=" " alt="" coords="275,5,453,32"/>
 <area shape="rect" id="node3" href="$classBserClient_1_1Types_1_1BserRankTop.html" title=" " alt="" coords="263,56,465,83"/>
 <area shape="rect" id="node4" href="$classBserClient_1_1Types_1_1BserRankUser.html" title=" " alt="" coords="260,107,468,133"/>
 <area shape="rect" id="node5" href="$classBserClient_1_1Types_1_1BserUserGames.html" title=" " alt="" coords="275,158,453,199"/>
+<area shape="rect" id="node6" href="$classBserClient_1_1Types_1_1BserUserStats.html" title=" " alt="" coords="275,223,453,265"/>
 </map>
