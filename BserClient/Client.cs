@@ -237,7 +237,7 @@ namespace BserClient
                 // here we release the throttler immediately
                 Throttler.Release();
             }
-            return userGames;
+            return userStats;
         }
 
         /// <summary>
