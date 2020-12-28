@@ -188,8 +188,8 @@ namespace BserClient.Types
         public int totalGames { get; set; }
         public int usages { get; set; }
         public int maxKillings { get; set; }
-        public int top3 { get; set; }
-        public int top3Rate { get; set; }
+        public double top3 { get; set; }
+        public double top3Rate { get; set; }
     }
 
 

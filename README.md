@@ -3,6 +3,8 @@
 
 Simple wrapper around the eternal return black survival documentation.
 
+Most of the documentation can be found at [https://friendlyuser.github.io/bser_client/classBserClient_1_1BserHttpClient.html](BserClient).
+
 ## Disclaimer 
 
 Havent done too many C# projects.
