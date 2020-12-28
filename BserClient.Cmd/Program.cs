@@ -1,32 +1,27 @@
 ﻿using System;
 using System.Threading.Tasks;
-using System.Linq;
+using System.Collections.Generic;
+
 namespace BserClient.Cmd
 {
     public class Program
     {
-        public static void Main()
+        public static async Task Main()
         {
-            RunAsync().Wait();
-        }
+            string apiKey = Environment.GetEnvironmentVariable("BSER_APIKEY");
+            // Set up (called once per test)
+            var client = new BserHttpClient(apiKey);
 
-        public static async Task RunAsync()
-        {
-            var limiter = new TaskLimiter(10, TimeSpan.FromSeconds(1));
-
-            // create 100 tasks 
-            var tasks = Enumerable.Range(1, 100)
-            .Select(e => limiter.LimitAsync(() => DoSomeActionAsync(e)));
-            // wait unitl all 100 tasks are completed
-            await Task.WhenAll(tasks).ConfigureAwait(false);
-        }
-
-        static readonly Random _rng = new Random();
-
-        public static async Task DoSomeActionAsync(int i)
-        {
-            await Task.Delay(150 + _rng.Next(150)).ConfigureAwait(false);
-            Console.WriteLine("Completed Action {0}", i);
+            var tasks = new List<Task>();
+            for (var i = 0; i < 12; i++)
+            {
+                tasks.Add(Task.Run(async () =>
+                {
+                    var result = await client.GetData();
+                    Console.WriteLine(result.ToString());
+                }));
+            }
+            await Task.WhenAll(tasks.ToArray());
         }
     }
 }
