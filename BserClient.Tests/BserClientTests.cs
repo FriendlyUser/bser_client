@@ -81,7 +81,7 @@ namespace BserClient.Tests
             string message = data.message;
             Assert.Equal(200, code);
             Assert.Equal("Success", message);
-            Assert.IsType<List<UserStatsObj>>(data.userStats);
+            Assert.IsType<List<UserStatsCharacterStatsObj>>(data.userStats);
         }
     }
 }
