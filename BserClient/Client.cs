@@ -38,7 +38,7 @@ namespace BserClient
         }
 
         /// <summary>
-        /// Fetch game data by metadata
+        /// Fetch game data by metadata - calls /v1/data/{metaType}
         /// </summary>
         /// <param name="metaType">Meta Type, use 'hash' to find all types</param>
         public async Task<BserData> GetData(string metaType = "hash")
@@ -68,6 +68,10 @@ namespace BserClient
             }
             return bserData;
         }
+
+        /// <summary>
+        /// Fetch game data by metadata - calls /v1/rank/top/{seasonId}/{matchingTeamMode}
+        /// </summary>
         public async Task<BserRankTop> GetRankTop(int seasonId = 0, int matchingTeamMode = 1)
         {
             await Throttler.WaitAsync();
@@ -108,6 +112,9 @@ namespace BserClient
             return bserRankTop;
         }
 
+        /// <summary>
+        /// Fetch game data by metadata - calls /v1/rank/{userNum}/{seasonId}{matchingTeamMode}
+        /// </summary>
         public async Task<BserRankUser> GetRankUser(string userNum, int seasonId = 0, int matchingTeamMode = 1)
         {
             await Throttler.WaitAsync();
