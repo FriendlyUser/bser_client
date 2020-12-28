@@ -1,3 +1,4 @@
+[![codecov](https://codecov.io/gh/FriendlyUser/bser_client/branch/main/graph/badge.svg?token=EH0L58M6E3)](https://codecov.io/gh/FriendlyUser/bser_client)
 # Eternal Return Black Survival
 
 Simple wrapper around the eternal return black survival documentation.
