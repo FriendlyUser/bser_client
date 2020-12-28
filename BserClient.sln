@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BserClient", "BserClient\Bs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BserClient.Tests", "BserClient.Tests\BserClient.Tests.csproj", "{2FC56962-0D07-46A9-98EC-B740E7CF117A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BserClient.Http", "BserClient.Http\BserClient.Http.csproj", "{566207F9-0144-466F-A979-78D6083F9EF6}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

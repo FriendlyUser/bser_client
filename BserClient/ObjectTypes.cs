@@ -2,20 +2,8 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace BserClient.Types
 {
-    // standard response data from Bser request
     [ExcludeFromCodeCoverage]
-    public class BserRespData
-    {
-        public int code { get; set; }
-        public string message { get; set; }
-    }
-    [ExcludeFromCodeCoverage]
-    public class BserData : BserRespData
-    {
-        public BserGameObj data { get; set; }
-    }
-    [ExcludeFromCodeCoverage]
-    public class BserGameObj
+    public class GameDataObj
     {
         public double ActionCost { get; set; }
         public double Area { get; set; }
@@ -93,4 +81,14 @@ namespace BserClient.Types
         public double WeaponRoute { get; set; }
         public double WeaponTypeInfo { get; set; }
     }
+
+    [ExcludeFromCodeCoverage]
+    public class UserRankObj
+    {
+        public double userNum { get; set; }
+        public string nickname { get; set; }
+        public double rank { get; set; }
+        public double mmr { get; set; }
+    }
+
 }
