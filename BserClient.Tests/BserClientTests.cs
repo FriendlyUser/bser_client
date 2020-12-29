@@ -31,7 +31,7 @@ namespace BserClient.Tests
         [Fact]
         public async Task TestGetData()
         {
-            var bserData = await client.GetData();
+            BserMetaData bserData = await client.GetData();
             string debugMessage = String.Format("{0} - {1}", bserData.code, bserData.message);
             _testOutputHelper.WriteLine(debugMessage);
             int code = bserData.code;

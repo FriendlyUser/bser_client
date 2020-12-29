@@ -7,7 +7,35 @@ Most of the documentation can be found at [https://friendlyuser.github.io/bser_c
 
 ## Disclaimer 
 
-Havent done too many C# projects.
+Havent done too many C# projects. Free feel to have any pr you believe can improve this project.
+
+### Install
+
+The initial version is 
+
+```bash
+dotnet add package BserClient --version 1.0.0
+```
+
+A simple project looks like
+
+```csharp
+using System;
+using BserClient;
+using System.Threading.Tasks;
+namespace sample_bser_console_app
+{
+    class Program
+    {
+        static async Task Main(string[] args)
+        {
+            string apiKey = Environment.GetEnvironmentVariable("BSER_APIKEY");
+            BserHttpClient client = new BserHttpClient(apiKey);
+            BserClient.Types.BserMetaData bserData = await client.GetData();
+        }
+    }
+}
+```
 
 
 
