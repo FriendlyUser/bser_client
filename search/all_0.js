@@ -11,5 +11,6 @@ var searchData=
   ['bseruserstats_8',['BserUserStats',['../classBserClient_1_1Types_1_1BserUserStats.html',1,'BserClient::Types']]],
   ['extensions_9',['Extensions',['../namespaceBserClient_1_1Extensions.html',1,'BserClient']]],
   ['bserclient_20documentation_10',['BserClient Documentation',['../index.html',1,'']]],
-  ['types_11',['Types',['../namespaceBserClient_1_1Types.html',1,'BserClient']]]
+  ['types_11',['Types',['../namespaceBserClient_1_1Types.html',1,'BserClient']]],
+  ['utils_12',['Utils',['../namespaceBserClient_1_1Utils.html',1,'BserClient']]]
 ];

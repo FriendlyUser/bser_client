@@ -87,7 +87,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a365a609de7905eb0bf82bae7625e1a8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch game data by metadata - calls /v1/data/{metaType}  <a href="classBserClient_1_1BserHttpClient.html#a365a609de7905eb0bf82bae7625e1a8e">More...</a><br /></td></tr>
 <tr class="separator:a365a609de7905eb0bf82bae7625e1a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5732dbc5ac7ccf04f83bc5ca491a2bdd"><td class="memItemLeft" align="right" valign="top">async Task&lt; <a class="el" href="classBserClient_1_1Types_1_1BserTypeData.html">BserTypeData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBserClient_1_1BserHttpClient.html#a5732dbc5ac7ccf04f83bc5ca491a2bdd">GetData</a> (string metaType)</td></tr>
-<tr class="memdesc:a5732dbc5ac7ccf04f83bc5ca491a2bdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded function that can get values for given metadata  <a href="classBserClient_1_1BserHttpClient.html#a5732dbc5ac7ccf04f83bc5ca491a2bdd">More...</a><br /></td></tr>
+<tr class="memdesc:a5732dbc5ac7ccf04f83bc5ca491a2bdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded function that can get values for given metadata type  <a href="classBserClient_1_1BserHttpClient.html#a5732dbc5ac7ccf04f83bc5ca491a2bdd">More...</a><br /></td></tr>
 <tr class="separator:a5732dbc5ac7ccf04f83bc5ca491a2bdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a779cc4cb176b722e51e8207e710ec749"><td class="memItemLeft" align="right" valign="top">async Task&lt; <a class="el" href="classBserClient_1_1Types_1_1BserRankTop.html">BserRankTop</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBserClient_1_1BserHttpClient.html#a779cc4cb176b722e51e8207e710ec749">GetRankTop</a> (int seasonId=0, int matchingTeamMode=1)</td></tr>
 <tr class="memdesc:a779cc4cb176b722e51e8207e710ec749"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch game data by metadata - calls /v1/rank/top/{seasonId}/{matchingTeamMode}  <a href="classBserClient_1_1BserHttpClient.html#a779cc4cb176b722e51e8207e710ec749">More...</a><br /></td></tr>
@@ -234,8 +234,8 @@ HttpClient&#160;</td><td class="memItemRight" valign="bottom"><b>Client</b> = ne
 </table>
 </div><div class="memdoc">
 
-<p>Overloaded function that can get values for given metadata </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>figure out how to enum the possible values. Since as ActionCost </dd></dl>
+<p>Overloaded function that can get values for given metadata type </p>
+<p>&lt;remark&gt; Since arbitary json data is returned from the api, data is a List of dictionary of System.Text.Json.JsonElement &lt;/remark&gt; </p>
 
 </div>
 </div>
