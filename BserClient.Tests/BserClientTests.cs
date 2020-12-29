@@ -19,7 +19,7 @@ namespace BserClient.Tests
             _testOutputHelper = testOutputHelper;
             string apiKey = Environment.GetEnvironmentVariable("BSER_APIKEY");
             // Set up (called once per test)
-            client = new BserHttpClient(apiKey);
+            client = new BserHttpClient(apiKey, "v1");
         }
 
         // no functionality right now

@@ -30,7 +30,7 @@ namespace sample_bser_console_app
         static async Task Main(string[] args)
         {
             string apiKey = Environment.GetEnvironmentVariable("BSER_APIKEY");
-            BserHttpClient client = new BserHttpClient(apiKey);
+            BserHttpClient client = new BserHttpClient(apiKey, "v1);
             BserClient.Types.BserMetaData bserData = await client.GetData();
         }
     }
