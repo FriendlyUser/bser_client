@@ -73,6 +73,7 @@ namespace BserClient
 
         /// <summary>
         /// Overloaded function that can get values for given metadata type
+        /// Fetch game data by metadata - calls /v1/data/{metaType}
         /// </summary>
         /// <remark>
         /// Since arbitary json data is returned from the api, data is a List of dictionary of System.Text.Json.JsonElement
