@@ -26,7 +26,7 @@ namespace BserClient.Types
     [ExcludeFromCodeCoverage]
     public class BserTypeData : BserRespData    
     {
-        List<Dictionary<string, object>> data {get; set; }
+        public List<Dictionary<string, System.Text.Json.JsonElement>> data {get; set; }
     }
 
     [ExcludeFromCodeCoverage]

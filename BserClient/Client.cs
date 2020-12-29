@@ -23,7 +23,7 @@ namespace BserClient
         /// <param name="apikey">Bser apikey from developer api portal.</param>
         /// <param name="rateLimit">Rate limit for requests (should be 1 for personal apikey).</param>
         /// <param name="burstLimit">Burst limit for requests (should be 2 for personal apikey).</param>
-        public BserHttpClient(string apiKey, string version="v1", int rateLimit = 1, int burstLimit = 2)
+        public BserHttpClient(string apiKey, string version = "v1", int rateLimit = 1, int burstLimit = 2)
         {
             /// \todo TODO figure out how to handle urls when v2 comes out
             Client.BaseAddress = new Uri("https://open-api.bser.io");
@@ -43,7 +43,7 @@ namespace BserClient
         /// </summary>
         /// <param name="metaType">Meta Type, use 'hash' to find all types</param>
         public async Task<BserMetaData> GetData()
-        {   
+        {
             string metaType = "hash";
             await Throttler.WaitAsync();
             string endpoint = String.Format("/v1/data/{0}", metaType);
@@ -72,9 +72,12 @@ namespace BserClient
         }
 
         /// <summary>
-        /// Overloaded function that can get values for given metadata
-        /// \todo figure out how to enum the possible values. Since as ActionCost
+        /// Overloaded function that can get values for given metadata type
         /// </summary>
+        /// <remark>
+        /// Since arbitary json data is returned from the api, data is a List of dictionary of System.Text.Json.JsonElement
+        // I believe for most purposes using `itemData.data[0]["code"].ToString()` should be adequate.
+        /// </remark>
         public async Task<BserTypeData> GetData(string metaType)
         {
             await Throttler.WaitAsync();
@@ -203,10 +206,13 @@ namespace BserClient
                 Console.WriteLine("userNum should be valid Number");
                 return null;
             }
-            if (next == 0) {
+            if (next == 0)
+            {
                 endpoint = String.Format("/v1/user/games/{0}", userNum);
-            } else {
-                 endpoint = String.Format("/v1/user/games/{0}?next={1}", userNum, next);
+            }
+            else
+            {
+                endpoint = String.Format("/v1/user/games/{0}?next={1}", userNum, next);
             }
             BserUserGames userGames;
             try

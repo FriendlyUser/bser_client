@@ -91,10 +91,12 @@ namespace BserClient.Tests
             int code = itemData.code;
             string message = itemData.message;
             string debugMessage = String.Format("{0} - {1}", itemData.code, itemData.message);
-            _testOutputHelper.WriteLine(debugMessage);
             Assert.Equal(200, code);
             Assert.Equal("Success", message);
-            
+            _testOutputHelper.WriteLine(debugMessage);
+
+            String itemCode = itemData.data[0]["code"].ToString();
+            Assert.IsType<List<Dictionary<string, System.Text.Json.JsonElement>>>(itemData.data);
         }
     }
 }
