@@ -277,6 +277,49 @@ namespace BserClient
             return userStats;
         }
 
+                /// <summary>
+        /// Fetch game data by metadata - calls /v1/rank/top/{seasonId}/{matchingTeamMode}
+        /// </summary>
+        public async Task<BserRankTop> GetUserNickname(string nickname)
+        {
+            await Throttler.WaitAsync();
+            string endpoint = String.Format("/v1/user/nickname?query={0}", nickname);
+            // range of game modes
+            if (matchingTeamMode < 1 && matchingTeamMode > 3)
+            {
+                // matching team modes are 1, 2 and 3
+                Console.WriteLine("matchingTeamMode should be within 1 and 3");
+                return null;
+            }
+            if (seasonId < 0)
+            {
+                Console.WriteLine("seasonId should be greater than 0");
+                return null;
+            }
+            BserRankTop bserRankTop;
+            try
+            {
+                var response = await Client.GetAsync(endpoint);
+
+                // let's wait here for 1 second to honor the API's rate limit                         
+                await Task.Delay(1000 / RateLimit);
+                // add error handling
+                // response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+                bserRankTop = JsonSerializer.Deserialize<BserRankTop>(responseBody);
+                if (!response.IsSuccessStatusCode)
+                {
+                    PrintRespErrors(bserRankTop);
+                }
+            }
+            finally
+            {
+                // here we release the throttler immediately
+                Throttler.Release();
+            }
+            return bserRankTop;
+        }
+
         /// <summary>
         /// Output code and message for erronous requests
         /// </summary>

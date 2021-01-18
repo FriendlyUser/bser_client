@@ -83,12 +83,17 @@ namespace BserClient.Types
     }
 
     [ExcludeFromCodeCoverage]
-    public class UserRankObj
+    public class UserRankObj: UserObj
+    {
+        public double rank { get; set; }
+        public double mmr { get; set; }
+    }
+
+    [ExcludeFromCodeCoverage]
+    public class UserObj
     {
         public double userNum { get; set; }
         public string nickname { get; set; }
-        public double rank { get; set; }
-        public double mmr { get; set; }
     }
 
     [ExcludeFromCodeCoverage]
