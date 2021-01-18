@@ -98,5 +98,16 @@ namespace BserClient.Tests
             String itemCode = itemData.data[0]["code"].ToString();
             Assert.IsType<List<Dictionary<string, System.Text.Json.JsonElement>>>(itemData.data);
         }
+
+        [Fact]
+        public async Task TestGetUser()
+        {
+            BserUserNickname userData = await client.GetUserNickname("grandfleet");
+            int code = userData.code;
+            string message = userData.message;
+            Assert.Equal(200, code);
+            Assert.Equal("Success", message);
+            Assert.Equal("grandfleet", userData.user.nickname);
+        }
     }
 }

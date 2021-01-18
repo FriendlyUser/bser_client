@@ -54,4 +54,10 @@ namespace BserClient.Types
     {
         public List<UserStatsCharacterStatsObj> userStats {get; set;}
     }
+
+    [ExcludeFromCodeCoverage]
+    public class BserUserNickname : BserRespData
+    {
+        public UserObj user {get; set;}
+    }
 }
