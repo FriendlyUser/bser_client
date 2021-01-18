@@ -8,9 +8,10 @@ var searchData=
   ['bserrespdata_5',['BserRespData',['../classBserClient_1_1Types_1_1BserRespData.html',1,'BserClient::Types']]],
   ['bsertypedata_6',['BserTypeData',['../classBserClient_1_1Types_1_1BserTypeData.html',1,'BserClient::Types']]],
   ['bserusergames_7',['BserUserGames',['../classBserClient_1_1Types_1_1BserUserGames.html',1,'BserClient::Types']]],
-  ['bseruserstats_8',['BserUserStats',['../classBserClient_1_1Types_1_1BserUserStats.html',1,'BserClient::Types']]],
-  ['extensions_9',['Extensions',['../namespaceBserClient_1_1Extensions.html',1,'BserClient']]],
-  ['bserclient_20documentation_10',['BserClient Documentation',['../index.html',1,'']]],
-  ['types_11',['Types',['../namespaceBserClient_1_1Types.html',1,'BserClient']]],
-  ['utils_12',['Utils',['../namespaceBserClient_1_1Utils.html',1,'BserClient']]]
+  ['bserusernickname_8',['BserUserNickname',['../classBserClient_1_1Types_1_1BserUserNickname.html',1,'BserClient::Types']]],
+  ['bseruserstats_9',['BserUserStats',['../classBserClient_1_1Types_1_1BserUserStats.html',1,'BserClient::Types']]],
+  ['extensions_10',['Extensions',['../namespaceBserClient_1_1Extensions.html',1,'BserClient']]],
+  ['bserclient_20documentation_11',['BserClient Documentation',['../index.html',1,'']]],
+  ['types_12',['Types',['../namespaceBserClient_1_1Types.html',1,'BserClient']]],
+  ['utils_13',['Utils',['../namespaceBserClient_1_1Utils.html',1,'BserClient']]]
 ];
