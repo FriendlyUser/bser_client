@@ -158,6 +158,8 @@ namespace BserClient.Types
         public double teamNumber { get; set; }
         public double preMade { get; set; }
         public double gainedNormalMmrKFactor { get; set; }
+
+        public string serverName {get; set;}
     }
 
     [ExcludeFromCodeCoverage]
