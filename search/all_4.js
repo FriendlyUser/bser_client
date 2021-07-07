@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['printresperrors_23',['PrintRespErrors',['../classBserClient_1_1BserHttpClient.html#a56e8ed3d8fdfd58e31c3924a151d0c58',1,'BserClient::BserHttpClient']]]
+  ['usergameobj_23',['UserGameObj',['../classBserClient_1_1Types_1_1UserGameObj.html',1,'BserClient::Types']]],
+  ['userobj_24',['UserObj',['../classBserClient_1_1Types_1_1UserObj.html',1,'BserClient::Types']]],
+  ['userrankobj_25',['UserRankObj',['../classBserClient_1_1Types_1_1UserRankObj.html',1,'BserClient::Types']]],
+  ['userstatscharacterstatsobj_26',['UserStatsCharacterStatsObj',['../classBserClient_1_1Types_1_1UserStatsCharacterStatsObj.html',1,'BserClient::Types']]],
+  ['userstatsobj_27',['UserStatsObj',['../classBserClient_1_1Types_1_1UserStatsObj.html',1,'BserClient::Types']]]
 ];
