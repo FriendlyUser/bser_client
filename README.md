@@ -40,6 +40,7 @@ namespace sample_bser_console_app
 ```
 
 
+For interactive notebooks see https://github.com/FriendlyUser/black-survival-interactive
 
 ## References
 

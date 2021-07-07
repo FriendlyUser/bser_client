@@ -1,127 +1,185 @@
 // make classes for usergames
 var userGames = {
-    "code": 200,
-    "message": "Success",
-    "userGames": [
-      {
-        "userNum": 189543,
-        "nickname": "태도",
-        "gameId": 525169,
-        "seasonId": 1,
-        "matchingMode": 3,
-        "matchingTeamMode": 1,
-        "characterNum": 6,
-        "characterLevel": 18,
-        "gameRank": 1,
-        "playerKill": 5,
-        "playerAssistant": 0,
-        "monsterKill": 90,
-        "bestWeapon": 7,
-        "bestWeaponLevel": 20,
-        "masteryLevel": {
-          "7": 20,
-          "8": 1,
-          "101": 6,
-          "102": 9,
-          "103": 8,
-          "104": 16,
-          "201": 8,
-          "202": 16,
-          "203": 12,
-          "204": 20
-        },
-        "equipment": {
-          "0": 114405,
-          "1": 202402,
-          "2": 201409,
-          "3": 203408,
-          "4": 204402,
-          "5": 205401
-        },
-        "versionMajor": 22,
-        "versionMinor": 2,
-        "skillLevelInfo": {
-          "1006100": 2,
-          "1006200": 5,
-          "1006300": 3,
-          "1006400": 4,
-          "1006410": 1,
-          "1006500": 3,
-          "3007000": 2
-        },
-        "skillOrderInfo": {
-          "1": 1006400,
-          "2": 1006300,
-          "3": 1006200,
-          "4": 1006200,
-          "5": 1006200,
-          "6": 1006500,
-          "7": 1006200,
-          "8": 3007000,
-          "9": 1006100,
-          "10": 1006200,
-          "11": 1006410,
-          "12": 1006500,
-          "13": 1006100,
-          "14": 1006400,
-          "15": 3007000,
-          "16": 1006400,
-          "17": 1006400,
-          "18": 1006500,
-          "19": 1006300,
-          "20": 1006300
-        },
-        "maxHp": 2555,
-        "maxSp": 1323,
-        "attackPower": 164,
-        "defense": 123,
-        "hpRegen": 1.18,
-        "spRegen": 2.75,
-        "attackSpeed": 2.4,
-        "moveSpeed": 2.51,
-        "outOfCombatMoveSpeed": 2.83,
-        "sightRange": 5.28,
-        "attackRange": 6.25,
-        "criticalStrikeChance": 0,
-        "criticalStrikeDamage": 0,
-        "coolDownReduction": 0,
-        "lifeSteal": 0.21,
-        "amplifierToMonster": 80,
-        "trapDamage": 24,
-        "gainExp": 277,
-        "startDtm": "2020-12-28T08:45:40.040+0900",
-        "duration": 1043,
-        "mmrBefore": 1422,
-        "damageToPlayer": 19261,
-        "damageToMonster": 118072,
-        "killerUserNum": 0,
-        "playTime": 1043,
-        "watchTime": 0,
-        "totalTime": 1043,
-        "botAdded": 0,
-        "botRemain": 0,
-        "restrictedAreaAccelerated": 1,
-        "safeAreas": 1,
-        "killer": "",
-        "killDetail": "",
-        "causeOfDeath": "",
-        "teamNumber": 1,
-        "preMade": 1,
-        "gainedNormalMmrKFactor": 10.197767
-      }
-    ]
+  "code": 200,
+  "message": "Success",
+  "userGames": [
+    {
+      "userNum":1284642,
+      "nickname":"grandfleet",
+      "gameId":9833469,
+      "seasonId":3,
+      "matchingMode":3,
+      "matchingTeamMode":1,
+      "characterNum":7,
+      "skinCode":1007001,
+      "characterLevel":20,
+      "gameRank":3,
+      "playerKill":2,
+      "playerAssistant":0,
+      "monsterKill":32,
+      "bestWeapon":2,
+      "bestWeaponLevel":16,
+      "masteryLevel":{
+         "1":1,
+         "2":16,
+         "204":17,
+         "102":15,
+         "103":11,
+         "104":20,
+         "201":13,
+         "202":17,
+         "203":15,
+         "101":11
+      },
+      "equipment":{
+         "0":111404,
+         "1":202501,
+         "2":201409,
+         "3":203501,
+         "4":204410,
+         "5":205201
+      },
+      "versionMajor":35,
+      "versionMinor":0,
+      "language":"English",
+      "skillLevelInfo":{
+         "1007400":5,
+         "1007200":5,
+         "1007300":5,
+         "1007500":3,
+         "3002000":2,
+         "1007100":2
+      },
+      "skillOrderInfo":{
+         "1":1007400,
+         "2":1007200,
+         "3":1007200,
+         "4":1007300,
+         "5":1007200,
+         "6":1007500,
+         "7":1007200,
+         "8":1007400,
+         "9":1007200,
+         "10":1007400,
+         "11":3002000,
+         "12":1007500,
+         "13":1007400,
+         "14":1007400,
+         "15":1007100,
+         "16":1007100,
+         "17":1007500,
+         "18":1007300,
+         "19":1007300,
+         "20":3002000,
+         "21":1007300,
+         "22":1007300
+      },
+      "serverName":"Ohio",
+      "maxHp":3132,
+      "maxSp":1167,
+      "attackPower":164,
+      "defense":157,
+      "hpRegen":4.88,
+      "spRegen":9.77,
+      "attackSpeed":0.8,
+      "moveSpeed":3.74,
+      "outOfCombatMoveSpeed":4.47,
+      "sightRange":14.62,
+      "attackRange":1.65,
+      "criticalStrikeChance":0.0,
+      "criticalStrikeDamage":0.0,
+      "coolDownReduction":0.0,
+      "lifeSteal":0.0,
+      "amplifierToMonster":68.0,
+      "trapDamage":44.0,
+      "gainExp":202,
+      "startDtm":"2021-07-07T10:06:12.012+0900",
+      "duration":1359,
+      "mmrBefore":2018,
+      "playTime":1359,
+      "watchTime":0,
+      "totalTime":1359,
+      "botAdded":0,
+      "botRemain":0,
+      "restrictedAreaAccelerated":0,
+      "safeAreas":0,
+      "teamNumber":14,
+      "preMade":1,
+      "eventMissionResult":{
+         
+      },
+      "gainedNormalMmrKFactor":10.0,
+      "victory":0,
+      "craftUncommon":17,
+      "craftRare":21,
+      "craftEpic":10,
+      "craftLegend":1,
+      "damageToPlayer":13602,
+      "damageToPlayer_trap":0,
+      "damageToPlayer_basic":525,
+      "damageToPlayer_skill":10803,
+      "damageToPlayer_itemSkill":0,
+      "damageToPlayer_direct":2274,
+      "damageFromPlayer":14395,
+      "damageFromPlayer_trap":0,
+      "damageFromPlayer_basic":4899,
+      "damageFromPlayer_skill":7947,
+      "damageFromPlayer_itemSkill":373,
+      "damageFromPlayer_direct":1176,
+      "damageToMonster":45019,
+      "damageToMonster_trap":0,
+      "damageToMonster_basic":9911,
+      "damageToMonster_skill":35108,
+      "damageToMonster_itemSkill":0,
+      "damageToMonster_direct":0,
+      "damageFromMonster":2514,
+      "killMonsters":{
+         "1":2,
+         "5":12,
+         "4":5,
+         "2":5,
+         "6":3,
+         "3":5
+      },
+      "healAmount":17615,
+      "teamRecover":0,
+      "protectAbsorb":0,
+      "addSurveillanceCamera":3,
+      "addTelephotoCamera":3,
+      "removeSurveillanceCamera":2,
+      "removeTelephotoCamera":2,
+      "useHyperLoop":4,
+      "useSecurityConsole":7,
+      "giveUp":0,
+      "teamSpectator":0,
+      "routeIdOfStart":375760,
+      "placeOfStart":"15",
+      "mmrAvg":1968,
+      "teamKill":2,
+      "accountLevel":118,
+      "killerUserNum":110168,
+      "killer":"player",
+      "killDetail":"Tezca",
+      "causeOfDeath":"",
+      "placeOfDeath":"6",
+      "killerCharacter":"Jackie",
+      "killerWeapon":"OneHandSword",
+      "killerUserNum2":0,
+      "killerUserNum3":0
+   }
+  ]
+}
+
+for (const [prop, value] of Object.entries(userGames.userGames[0])) {
+  let cProperty
+  if (typeof value === 'string') {
+    cProperty = `public string ${prop} {get; set;}`
+  } else if (typeof value === 'number') {
+    cProperty = `public double ${prop} {get; set;}`
+  } else if (typeof value === 'object') {
+    cProperty = `public IDictionary<string, int> ${prop} {get; set;}`
+  } else {
+    cProperty = `public string ${prop} {get; set;}`
   }
-  
-  for (const [prop, value] of Object.entries(userGames.userGames[0])) {
-    let cProperty
-    if (typeof value === 'string') {
-      cProperty = `public string ${prop} {get; set;}`
-    } else if (typeof value === 'number') {
-      cProperty = `public double ${prop} {get; set;}`
-    } else if (typeof value === 'object') {
-      cProperty = `public IDictionary<string, int> ${prop} {get; set;}`
-    } else {
-      cProperty = `public string ${prop} {get; set;}`
-    }
-    console.log(cProperty)
-  }
+  console.log(cProperty)
+}

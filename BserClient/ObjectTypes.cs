@@ -83,7 +83,7 @@ namespace BserClient.Types
     }
 
     [ExcludeFromCodeCoverage]
-    public class UserRankObj: UserObj
+    public class UserRankObj : UserObj
     {
         public double rank { get; set; }
         public double mmr { get; set; }
@@ -99,13 +99,14 @@ namespace BserClient.Types
     [ExcludeFromCodeCoverage]
     public class UserGameObj
     {
-        public int userNum { get; set; }
+        public double userNum { get; set; }
         public string nickname { get; set; }
         public double gameId { get; set; }
         public double seasonId { get; set; }
         public double matchingMode { get; set; }
         public double matchingTeamMode { get; set; }
         public double characterNum { get; set; }
+        public double skinCode { get; set; }
         public double characterLevel { get; set; }
         public double gameRank { get; set; }
         public double playerKill { get; set; }
@@ -113,14 +114,14 @@ namespace BserClient.Types
         public double monsterKill { get; set; }
         public double bestWeapon { get; set; }
         public double bestWeaponLevel { get; set; }
-        /// \todo map to object inside of key value pair
-        public IDictionary<string, double> masteryLevel { get; set; }
-        /// \todo map to object inside of key value pair
-        public IDictionary<string, double> equipment { get; set; }
+        public IDictionary<string, int> masteryLevel { get; set; }
+        public IDictionary<string, int> equipment { get; set; }
         public double versionMajor { get; set; }
         public double versionMinor { get; set; }
-        public IDictionary<string, double> skillLevelInfo { get; set; }
-        public IDictionary<string, double> skillOrderInfo { get; set; }
+        public string language { get; set; }
+        public IDictionary<string, int> skillLevelInfo { get; set; }
+        public IDictionary<string, int> skillOrderInfo { get; set; }
+        public string serverName { get; set; }
         public double maxHp { get; set; }
         public double maxSp { get; set; }
         public double attackPower { get; set; }
@@ -142,9 +143,6 @@ namespace BserClient.Types
         public string startDtm { get; set; }
         public double duration { get; set; }
         public double mmrBefore { get; set; }
-        public double damageToPlayer { get; set; }
-        public double damageToMonster { get; set; }
-        public double killerUserNum { get; set; }
         public double playTime { get; set; }
         public double watchTime { get; set; }
         public double totalTime { get; set; }
@@ -152,14 +150,60 @@ namespace BserClient.Types
         public double botRemain { get; set; }
         public double restrictedAreaAccelerated { get; set; }
         public double safeAreas { get; set; }
+        public double teamNumber { get; set; }
+        public double preMade { get; set; }
+        public IDictionary<string, int> eventMissionResult { get; set; }
+        public double gainedNormalMmrKFactor { get; set; }
+        public double victory { get; set; }
+        public double craftUncommon { get; set; }
+        public double craftRare { get; set; }
+        public double craftEpic { get; set; }
+        public double craftLegend { get; set; }
+        public double damageToPlayer { get; set; }
+        public double damageToPlayer_trap { get; set; }
+        public double damageToPlayer_basic { get; set; }
+        public double damageToPlayer_skill { get; set; }
+        public double damageToPlayer_itemSkill { get; set; }
+        public double damageToPlayer_direct { get; set; }
+        public double damageFromPlayer { get; set; }
+        public double damageFromPlayer_trap { get; set; }
+        public double damageFromPlayer_basic { get; set; }
+        public double damageFromPlayer_skill { get; set; }
+        public double damageFromPlayer_itemSkill { get; set; }
+        public double damageFromPlayer_direct { get; set; }
+        public double damageToMonster { get; set; }
+        public double damageToMonster_trap { get; set; }
+        public double damageToMonster_basic { get; set; }
+        public double damageToMonster_skill { get; set; }
+        public double damageToMonster_itemSkill { get; set; }
+        public double damageToMonster_direct { get; set; }
+        public double damageFromMonster { get; set; }
+        public IDictionary<string, int> killMonsters { get; set; }
+        public double healAmount { get; set; }
+        public double teamRecover { get; set; }
+        public double protectAbsorb { get; set; }
+        public double addSurveillanceCamera { get; set; }
+        public double addTelephotoCamera { get; set; }
+        public double removeSurveillanceCamera { get; set; }
+        public double removeTelephotoCamera { get; set; }
+        public double useHyperLoop { get; set; }
+        public double useSecurityConsole { get; set; }
+        public double giveUp { get; set; }
+        public double teamSpectator { get; set; }
+        public double routeIdOfStart { get; set; }
+        public string placeOfStart { get; set; }
+        public double mmrAvg { get; set; }
+        public double teamKill { get; set; }
+        public double accountLevel { get; set; }
+        public double killerUserNum { get; set; }
         public string killer { get; set; }
         public string killDetail { get; set; }
         public string causeOfDeath { get; set; }
-        public double teamNumber { get; set; }
-        public double preMade { get; set; }
-        public double gainedNormalMmrKFactor { get; set; }
-
-        public string serverName {get; set;}
+        public string placeOfDeath { get; set; }
+        public string killerCharacter { get; set; }
+        public string killerWeapon { get; set; }
+        public double killerUserNum2 { get; set; }
+        public double killerUserNum3 { get; set; }
     }
 
     [ExcludeFromCodeCoverage]
