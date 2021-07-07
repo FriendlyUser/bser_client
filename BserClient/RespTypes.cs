@@ -60,4 +60,16 @@ namespace BserClient.Types
     {
         public UserObj user {get; set;}
     }
+
+    [ExcludeFromCodeCoverage]
+    public class BserRecommendedRoutes : BserRespData
+    {
+        public List<RecommendWeaponResult> result {get; set;}
+    }
+
+    
+    public class BserRecommendedRoute : BserRespData
+    {
+        public RecommendWeaponResult result {get; set;}
+    }
 }

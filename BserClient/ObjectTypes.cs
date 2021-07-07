@@ -243,5 +243,50 @@ namespace BserClient.Types
         public double top3Rate { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
+    public class RecommendWeaponRouteData
+    {
+        public double id { get; set; }
+        public string title { get; set; }
+        public double userNum { get; set; }
+        public string userNickname { get; set; }
+        public double characterCode { get; set; }
+        public double slotId { get; set; }
+        public double weaponType { get; set; }
+        public string weaponCodes { get; set; }
+        public string paths { get; set; }
+        public double count { get; set; }
+        public string version { get; set; }
+        public double teamMode { get; set; }
+        public string languageCode { get; set; }
+        public double routeVersion { get; set; }
+        public double like { get; set; }
+        public double unLike { get; set; }
+        public double likeScore { get; set; }
+        public double unLikeScore { get; set; }
+        public double accumulateLike { get; set; }
+        public double accumulateUnLike { get; set; }
+        public double accumulateLikeScore { get; set; }
+        public double accumulateUnLikeScore { get; set; }
+        public string share { get; set; }
+        public double updateDtm { get; set; }
+        public double starScore { get; set; }
+        public double accumulateStarScore { get; set; }
+    }
+
+
+    public class RecommendWeaponRouteDesc
+    {
+        public double recommendWeaponRouteId { get; set; }
+        public string descTitle { get; set; }
+        public string desc { get; set; }
+    }
+
+    [ExcludeFromCodeCoverage]
+    public class RecommendWeaponResult 
+    {
+        public RecommendWeaponRouteDesc recommendWeaponDesc {get; set;}
+        public RecommendWeaponRouteData recommendWeaponRoute {get; set;}
+    }
 
 }

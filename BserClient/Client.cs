@@ -240,6 +240,46 @@ namespace BserClient
         }
 
         /// <summary>
+        /// Fetch full game data, returns an list of user games 
+        /// for each player in the game
+        /// </summary>
+        public async Task<BserUserGames> GetFullGame(int gameNum)
+        {
+            await Throttler.WaitAsync();
+            string endpoint;
+            // range of game modes
+            if (gameNum < 0)
+            {
+                // matching team modes are 1, 2 and 3
+                Console.WriteLine("userNum should be valid Number");
+                return null;
+            }
+            endpoint = String.Format("/v1/games/{0}", gameNum);
+            BserUserGames userGames;
+            try
+            {
+                var response = await Client.GetAsync(endpoint);
+
+                // let's wait here for 1 second to honor the API's rate limit                         
+                await Task.Delay(1000 / RateLimit);
+                // add error handling
+                // response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+                userGames = JsonSerializer.Deserialize<BserUserGames>(responseBody);
+                if (!response.IsSuccessStatusCode)
+                {
+                    PrintRespErrors(userGames);
+                }
+            }
+            finally
+            {
+                // here we release the throttler immediately
+                Throttler.Release();
+            }
+            return userGames;
+        }
+
+        /// <summary>
         /// Fetch game data by metadata - calls /v1/user/games/{userNum}
         /// </summary>
         public async Task<BserUserStats> GetUserStats(int userNum, int seasonId = 1)
@@ -277,13 +317,78 @@ namespace BserClient
             return userStats;
         }
 
-                /// <summary>
-        /// Fetch game data by metadata - calls /v1/rank/top/{seasonId}/{matchingTeamMode}
+        /// <summary>
+        /// Fetch user details by username
         /// </summary>
         public async Task<BserUserNickname> GetUserNickname(string nickname)
         {
             await Throttler.WaitAsync();
             string endpoint = String.Format("/v1/user/nickname?query={0}", nickname);
+            // range of game modes
+            BserUserNickname user;
+            try
+            {
+                var response = await Client.GetAsync(endpoint);
+
+                // let's wait here for 1 second to honor the API's rate limit                         
+                await Task.Delay(1000 / RateLimit);
+                // add error handling
+                // response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+                user = JsonSerializer.Deserialize<BserUserNickname>(responseBody);
+                if (!response.IsSuccessStatusCode)
+                {
+                    PrintRespErrors(user);
+                }
+            }
+            finally
+            {
+                // here we release the throttler immediately
+                Throttler.Release();
+            }
+            return user;
+        }
+
+
+        /// <summary>
+        /// Fetch user details by username
+        /// </summary>
+        public async Task<BserUserNickname> GetWeaponRoutes()
+        {
+            await Throttler.WaitAsync();
+            string endpoint = String.Format("/v1/weaponRoutes/recommend?query={0}", query);
+            // range of game modes
+            BserUserNickname user;
+            try
+            {
+                var response = await Client.GetAsync(endpoint);
+
+                // let's wait here for 1 second to honor the API's rate limit                         
+                await Task.Delay(1000 / RateLimit);
+                // add error handling
+                // response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+                user = JsonSerializer.Deserialize<BserUserNickname>(responseBody);
+                if (!response.IsSuccessStatusCode)
+                {
+                    PrintRespErrors(user);
+                }
+            }
+            finally
+            {
+                // here we release the throttler immediately
+                Throttler.Release();
+            }
+            return user;
+        }
+
+        /// <summary>
+        /// Fetch user details by username
+        /// </summary>
+        public async Task<BserUserNickname> GetWeaponRoutesById(int routeId)
+        {
+            await Throttler.WaitAsync();
+            string endpoint = String.Format("/v1/weaponRoutes/recommend/{0}", routeId);
             // range of game modes
             BserUserNickname user;
             try
