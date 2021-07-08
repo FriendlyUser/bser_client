@@ -356,7 +356,7 @@ namespace BserClient
         public async Task<BserUserNickname> GetWeaponRoutes()
         {
             await Throttler.WaitAsync();
-            string endpoint = String.Format("/v1/weaponRoutes/recommend?query={0}", query);
+            string endpoint = "/v1/weaponRoutes/recommend";
             // range of game modes
             BserUserNickname user;
             try
