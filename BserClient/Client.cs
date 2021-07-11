@@ -351,7 +351,7 @@ namespace BserClient
 
 
         /// <summary>
-        /// Fetch user details by username
+        /// Obtain recommended weapon routes 
         /// </summary>
         public async Task<BserUserNickname> GetWeaponRoutes()
         {
@@ -383,7 +383,7 @@ namespace BserClient
         }
 
         /// <summary>
-        /// Fetch user details by username
+        /// Get weapon routes from id
         /// </summary>
         public async Task<BserUserNickname> GetWeaponRoutesById(int routeId)
         {
@@ -397,8 +397,6 @@ namespace BserClient
 
                 // let's wait here for 1 second to honor the API's rate limit                         
                 await Task.Delay(1000 / RateLimit);
-                // add error handling
-                // response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
                 user = JsonSerializer.Deserialize<BserUserNickname>(responseBody);
                 if (!response.IsSuccessStatusCode)
