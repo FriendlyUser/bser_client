@@ -112,5 +112,26 @@ namespace BserClient.Tests
             Assert.Equal("Success", message);
             Assert.Equal("grandfleet", userData.user.nickname);
         }
+
+        [Fact]
+        public async Task TestGetWeaponRoutes()
+        {
+            BserUserNickname userData = await client.GetWeaponRoutes();
+            int code = userData.code;
+            string message = userData.message;
+            Assert.Equal(200, code);
+            Assert.Equal("Success", message);
+        }
+
+        
+        [Fact]
+        public async Task TestGetWeaponRoutesById()
+        {
+            BserUserNickname userData = await client.GetWeaponRoutesById(343609);
+            int code = userData.code;
+            string message = userData.message;
+            Assert.Equal(200, code);
+            Assert.Equal("Success", message);
+        }
     }
 }
