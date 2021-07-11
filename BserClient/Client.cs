@@ -353,7 +353,7 @@ namespace BserClient
         /// <summary>
         /// Obtain recommended weapon routes 
         /// </summary>
-        public async Task<BserUserNickname> GetWeaponRoutes()
+        public async Task<BserRecommendedRoutes> GetWeaponRoutes()
         {
             await Throttler.WaitAsync();
             string endpoint = "/v1/weaponRoutes/recommend";
@@ -385,7 +385,7 @@ namespace BserClient
         /// <summary>
         /// Get weapon routes from id
         /// </summary>
-        public async Task<BserUserNickname> GetWeaponRoutesById(int routeId)
+        public async Task<BserRecommendedRoute> GetWeaponRoutesById(int routeId)
         {
             await Throttler.WaitAsync();
             string endpoint = String.Format("/v1/weaponRoutes/recommend/{0}", routeId);
