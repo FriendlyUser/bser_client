@@ -4,6 +4,7 @@ using Xunit.Abstractions;
 using System.Threading.Tasks;
 using BserClient.Types;
 using System.Collections.Generic;
+using System.Threading;
 namespace BserClient.Tests
 {
     // [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
@@ -19,6 +20,7 @@ namespace BserClient.Tests
             _testOutputHelper = testOutputHelper;
             string apiKey = Environment.GetEnvironmentVariable("BSER_APIKEY");
             // Set up (called once per test)
+            // is this causing rate limit issues?
             client = new BserHttpClient(apiKey, "v1");
         }
 
@@ -26,6 +28,7 @@ namespace BserClient.Tests
         public void Dispose()
         {
             // Tear down (called once per test)
+            Thread.Sleep(2000);
         }
 
         [Fact]
@@ -108,6 +111,27 @@ namespace BserClient.Tests
             Assert.Equal(200, code);
             Assert.Equal("Success", message);
             Assert.Equal("grandfleet", userData.user.nickname);
+        }
+
+        [Fact]
+        public async Task TestGetWeaponRoutes()
+        {
+            BserUserNickname userData = await client.GetWeaponRoutes();
+            int code = userData.code;
+            string message = userData.message;
+            Assert.Equal(200, code);
+            Assert.Equal("Success", message);
+        }
+
+        
+        [Fact]
+        public async Task TestGetWeaponRoutesById()
+        {
+            BserUserNickname userData = await client.GetWeaponRoutesById(343609);
+            int code = userData.code;
+            string message = userData.message;
+            Assert.Equal(200, code);
+            Assert.Equal("Success", message);
         }
     }
 }
