@@ -97,7 +97,7 @@ namespace BserClient.Types
     }
 
     [ExcludeFromCodeCoverage]
-    public class UserGameObj
+    public class UserGameObj: System.DynamicObject
     {
         public double userNum { get; set; }
         public string nickname { get; set; }
