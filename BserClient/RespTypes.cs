@@ -24,9 +24,10 @@ namespace BserClient.Types
     /// Arbitrary data returned from the bser api given a data type.
     /// </summary>
     [ExcludeFromCodeCoverage]
-    public class BserTypeData : BserRespData    
+    public class BserTypeData : BserRespData
     {
-        public List<Dictionary<string, System.Text.Json.JsonElement>> data {get; set; }
+        // public List<Dictionary<string, System.Text.Json.JsonElement>> data {get; set; }
+        public dynamic data {get; set; }
     }
 
     [ExcludeFromCodeCoverage]
