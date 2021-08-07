@@ -289,4 +289,17 @@ namespace BserClient.Types
         public RecommendWeaponRouteData recommendWeaponRoute {get; set;}
     }
 
+
+    [ExcludeFromCodeCoverage]
+    public class freeCharactersResult 
+    {
+        public List<double> freeCharacters {get; set;}
+    }
+
+    [ExcludeFromCodeCoverage]
+    public class l10nData 
+    {
+        public string l10Path {get; set;}
+    }
+
 }

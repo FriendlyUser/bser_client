@@ -73,4 +73,9 @@ namespace BserClient.Types
     {
         public RecommendWeaponResult result {get; set;}
     }
+
+    public class Bserl10n : BserRespData
+    {
+        public l10nData data {get; set;}
+    }
 }

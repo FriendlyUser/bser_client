@@ -357,8 +357,7 @@ namespace BserClient
         {
             await Throttler.WaitAsync();
             string endpoint = "/v1/weaponRoutes/recommend";
-            // range of game modes
-            BserUserNickname user;
+            BserRecommendedRoutes routes;
             try
             {
                 var response = await Client.GetAsync(endpoint);
@@ -368,10 +367,10 @@ namespace BserClient
                 // add error handling
                 // response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
-                user = JsonSerializer.Deserialize<BserUserNickname>(responseBody);
+                routes = JsonSerializer.Deserialize<BserRecommendedRoutes>(responseBody);
                 if (!response.IsSuccessStatusCode)
                 {
-                    PrintRespErrors(user);
+                    PrintRespErrors(routes);
                 }
             }
             finally
@@ -379,18 +378,18 @@ namespace BserClient
                 // here we release the throttler immediately
                 Throttler.Release();
             }
-            return user;
+            return routes;
         }
 
         /// <summary>
-        /// Get weapon routes from id
+        /// Get international data 
+        /// options are Korean, English, Japanese, ChineseSimplified, ChineseTraditional, French, Spanish, //SpanishLatin, Portuguese, PortugueseLatin, Indonesian, German, Russian, Thai, Vietnamese
         /// </summary>
-        public async Task<BserRecommendedRoute> GetWeaponRoutesById(int routeId)
+        public async Task<Bserl10n> Getl10nData(string language = "English")
         {
             await Throttler.WaitAsync();
-            string endpoint = String.Format("/v1/weaponRoutes/recommend/{0}", routeId);
-            // range of game modes
-            BserUserNickname user;
+            string endpoint = String.Format("/v1/l10n/{0}", language);
+            Bserl10n data;
             try
             {
                 var response = await Client.GetAsync(endpoint);
@@ -398,10 +397,10 @@ namespace BserClient
                 // let's wait here for 1 second to honor the API's rate limit                         
                 await Task.Delay(1000 / RateLimit);
                 string responseBody = await response.Content.ReadAsStringAsync();
-                user = JsonSerializer.Deserialize<BserUserNickname>(responseBody);
+                data = JsonSerializer.Deserialize<Bserl10n>(responseBody);
                 if (!response.IsSuccessStatusCode)
                 {
-                    PrintRespErrors(user);
+                    PrintRespErrors(data);
                 }
             }
             finally
@@ -409,7 +408,7 @@ namespace BserClient
                 // here we release the throttler immediately
                 Throttler.Release();
             }
-            return user;
+            return data;
         }
 
         /// <summary>
