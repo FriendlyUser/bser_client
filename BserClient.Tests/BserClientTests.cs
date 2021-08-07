@@ -116,7 +116,7 @@ namespace BserClient.Tests
         [Fact]
         public async Task TestGetWeaponRoutes()
         {
-            BserUserNickname userData = await client.GetWeaponRoutes();
+            BserRecommendedRoutes userData = await client.GetWeaponRoutes();
             int code = userData.code;
             string message = userData.message;
             Assert.Equal(200, code);
@@ -127,7 +127,7 @@ namespace BserClient.Tests
         [Fact]
         public async Task TestGetWeaponRoutesById()
         {
-            BserUserNickname userData = await client.GetWeaponRoutesById(343609);
+            BserRecommendedRoute userData = await client.GetWeaponRoutesById(343609);
             int code = userData.code;
             string message = userData.message;
             Assert.Equal(200, code);

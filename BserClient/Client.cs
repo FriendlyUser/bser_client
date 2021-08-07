@@ -381,6 +381,34 @@ namespace BserClient
             return routes;
         }
 
+ /// </summary>
+        public async Task<BserRecommendedRoute> GetWeaponRoutesById(int routeId)
+        {
+            await Throttler.WaitAsync();
+            string endpoint = String.Format("/v1/weaponRoutes/recommend/{0}", routeId);
+            // range of game modes
+            BserRecommendedRoute route;
+            try
+            {
+                var response = await Client.GetAsync(endpoint);
+
+                // let's wait here for 1 second to honor the API's rate limit                         
+                await Task.Delay(1000 / RateLimit);
+                string responseBody = await response.Content.ReadAsStringAsync();
+                route = JsonSerializer.Deserialize<BserRecommendedRoute>(responseBody);
+                if (!response.IsSuccessStatusCode)
+                {
+                    PrintRespErrors(route);
+                }
+            }
+            finally
+            {
+                // here we release the throttler immediately
+                Throttler.Release();
+            }
+            return route;
+        }
+
         /// <summary>
         /// Get international data 
         /// options are Korean, English, Japanese, ChineseSimplified, ChineseTraditional, French, Spanish, //SpanishLatin, Portuguese, PortugueseLatin, Indonesian, German, Russian, Thai, Vietnamese
