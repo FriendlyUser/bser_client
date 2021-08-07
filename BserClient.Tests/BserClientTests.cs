@@ -99,7 +99,7 @@ namespace BserClient.Tests
             _testOutputHelper.WriteLine(debugMessage);
 
             // String itemCode = itemData.data[0]["code"].ToString();
-            Assert.IsType<List<Dictionary<string, System.Text.Json.JsonElement>>>(itemData.data);
+            Assert.IsType<List<System.Text.Json.JsonElement>>(itemData.data);
         }
 
         [Fact]
