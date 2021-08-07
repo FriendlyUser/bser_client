@@ -268,7 +268,7 @@ namespace BserClient.Types
         public double accumulateUnLike { get; set; }
         public double accumulateLikeScore { get; set; }
         public double accumulateUnLikeScore { get; set; }
-        public string share { get; set; }
+        public bool share { get; set; }
         public double updateDtm { get; set; }
         public double starScore { get; set; }
         public double accumulateStarScore { get; set; }
