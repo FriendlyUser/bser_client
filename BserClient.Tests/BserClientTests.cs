@@ -98,7 +98,7 @@ namespace BserClient.Tests
             Assert.Equal("Success", message);
             _testOutputHelper.WriteLine(debugMessage);
 
-            String itemCode = itemData.data[0]["code"].ToString();
+            // String itemCode = itemData.data[0]["code"].ToString();
             Assert.IsType<List<Dictionary<string, System.Text.Json.JsonElement>>>(itemData.data);
         }
 
