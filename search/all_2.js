@@ -9,5 +9,6 @@ var searchData=
   ['getusergames_24',['GetUserGames',['../classBserClient_1_1BserHttpClient.html#aa49f56a5db71c310eed272a26828c4be',1,'BserClient::BserHttpClient']]],
   ['getusernickname_25',['GetUserNickname',['../classBserClient_1_1BserHttpClient.html#a0768fc034e8d4a7a496645e40e75ea36',1,'BserClient::BserHttpClient']]],
   ['getuserstats_26',['GetUserStats',['../classBserClient_1_1BserHttpClient.html#a7b6dc40852ee7287ba7b798fe2495190',1,'BserClient::BserHttpClient']]],
-  ['getweaponroutes_27',['GetWeaponRoutes',['../classBserClient_1_1BserHttpClient.html#aadfa697854b9e51d19cf21b067c03dda',1,'BserClient::BserHttpClient']]]
+  ['getweaponroutes_27',['GetWeaponRoutes',['../classBserClient_1_1BserHttpClient.html#aadfa697854b9e51d19cf21b067c03dda',1,'BserClient::BserHttpClient']]],
+  ['getweaponroutesbyid_28',['GetWeaponRoutesById',['../classBserClient_1_1BserHttpClient.html#af35b985d3dcecfa74091514b309d0997',1,'BserClient::BserHttpClient']]]
 ];
