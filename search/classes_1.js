@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gamedataobj_47',['GameDataObj',['../classBserClient_1_1Types_1_1GameDataObj.html',1,'BserClient::Types']]]
+  ['freecharactersresult_51',['freeCharactersResult',['../classBserClient_1_1Types_1_1freeCharactersResult.html',1,'BserClient::Types']]]
 ];

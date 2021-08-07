@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['todo_20list_30',['Todo List',['../todo.html',1,'']]]
+  ['printresperrors_29',['PrintRespErrors',['../classBserClient_1_1BserHttpClient.html#a56e8ed3d8fdfd58e31c3924a151d0c58',1,'BserClient::BserHttpClient']]]
 ];
