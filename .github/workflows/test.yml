@@ -15,7 +15,7 @@ jobs:
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '6.0.1'
+          dotnet-version: '6.0.0'
       - run: dotnet build BserClient.Tests
       - run: dotnet test BserClient.Tests --collect:"XPlat Code Coverage"
       - run: cp -R BserClient.Tests/TestResults/**/*.xml .
