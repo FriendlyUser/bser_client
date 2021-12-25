@@ -2,54 +2,88 @@ using System.Diagnostics.CodeAnalysis;
 using System.Collections.Generic;
 namespace BserClient.Types
 {
+    // game data object for erbs
+    // default that is returned from the "/" endpoint
     [ExcludeFromCodeCoverage]
     public class GameDataObj
     {
+        public double Achievement { get; set; }
         public double ActionCost { get; set; }
+        public double ActionCost_Light { get; set; }
         public double Area { get; set; }
         public double AreaSound { get; set; }
+        public double BattlePassMission { get; set; }
+        public double BattlePassReward { get; set; }
+        public double BattlePassRewardItem { get; set; }
+        public double Booster { get; set; }
         public double BotAiModel { get; set; }
         public double BotCraft { get; set; }
         public double BotMastery { get; set; }
         public double BotNickName { get; set; }
         public double BotSkillBuild { get; set; }
         public double BulletCapacity { get; set; }
+        public double BulletCapacity_Light { get; set; }
         public double Character { get; set; }
         public double CharacterAttributes { get; set; }
         public double CharacterExp { get; set; }
         public double CharacterLevelUpStat { get; set; }
         public double CharacterMastery { get; set; }
         public double CharacterModeModifier { get; set; }
+        public double CharacterModeModifier_Light { get; set; }
+        public double CharacterSkillVideos { get; set; }
+        public double CharacterSkin { get; set; }
         public double CharacterState { get; set; }
         public double CharacterStateGroup { get; set; }
         public double CharacterVoice { get; set; }
         public double CharacterVoiceRandomCount { get; set; }
+        public double Character_Light { get; set; }
         public double Collectible { get; set; }
         public double ControlTypeUse { get; set; }
         public double CriticalChance { get; set; }
+        public double DiceConsumableSheet { get; set; }
+        public double DiceItemSheet { get; set; }
         public double DropGroup { get; set; }
+        public double DropGroup_Light { get; set; }
         public double EffectAndSound { get; set; }
+        public double Emblem { get; set; }
         public double Emotion { get; set; }
+        public double EventRewardUser { get; set; }
         public double FootStep { get; set; }
+        public double GameBattleStar { get; set; }
+        public double GameConstant { get; set; }
         public double GameRankExp { get; set; }
+        public double Goods { get; set; }
         public double HookLineProjectile { get; set; }
         public double HowToFindItem { get; set; }
         public double ItemArmor { get; set; }
         public double ItemConsumable { get; set; }
+        public double ItemConsumable_Light { get; set; }
         public double ItemMisc { get; set; }
+        public double ItemMisc_Light { get; set; }
         public double ItemSearchOption { get; set; }
+        public double ItemSkill { get; set; }
+        public double ItemSkillGroup { get; set; }
+        public double ItemSkillLinker { get; set; }
         public double ItemSpawn { get; set; }
         public double ItemSpecial { get; set; }
+        public double ItemSpecial_Light { get; set; }
         public double ItemWeapon { get; set; }
         public double KeyText { get; set; }
         public double Level { get; set; }
+        public double LoadingTip { get; set; }
+        public double LowestRankAdjust { get; set; }
         public double MasteryExp { get; set; }
         public double MasteryLevel { get; set; }
         public double MatchingQueueTier { get; set; }
         public double Mission { get; set; }
+        public double ModRestrictedArea { get; set; }
         public double Monster { get; set; }
         public double MonsterLevelUpStat { get; set; }
+        public double MonsterLevelUpStat_Light { get; set; }
         public double MonsterSpawnLevel { get; set; }
+        public double MonsterSpawnLevel_Light { get; set; }
+        public double MonsterVFShard_Light { get; set; }
+        public double Monster_Light { get; set; }
         public double NaviCollectAndHunt { get; set; }
         public double NearByArea { get; set; }
         public double Noise { get; set; }
@@ -58,14 +92,20 @@ namespace BserClient.Types
         public double ProductCharacter { get; set; }
         public double ProductInstant { get; set; }
         public double ProjectileSetting { get; set; }
+        public double ProjectileSetting_Light { get; set; }
         public double RecommendedArea { get; set; }
         public double RecommendedItemList { get; set; }
         public double RecommendedList { get; set; }
         public double RestrictedArea { get; set; }
         public double Reward { get; set; }
         public double RewardItem { get; set; }
+        public double RewindProjectile { get; set; }
+        public double Season { get; set; }
+        public double SeasonOutPlayers { get; set; }
         public double SecurityConsolEvent { get; set; }
         public double ServerRegion { get; set; }
+        public double ShopProduct { get; set; }
+        public double ShopProductItem { get; set; }
         public double Skill { get; set; }
         public double SkillEvolution { get; set; }
         public double SkillEvolutionPoint { get; set; }
@@ -74,7 +114,11 @@ namespace BserClient.Types
         public double SoundGroup { get; set; }
         public double StartItem { get; set; }
         public double SummonObject { get; set; }
+        public double SummonObjectStat { get; set; }
+        public double SummonObjectStat_Light { get; set; }
+        public double SummonObject_Light { get; set; }
         public double TimeOfDay { get; set; }
+        public double Trait { get; set; }
         public double TutorialReward { get; set; }
         public double WeaponAnimatorLayers { get; set; }
         public double WeaponMount { get; set; }
@@ -137,12 +181,19 @@ namespace BserClient.Types
         public double criticalStrikeDamage { get; set; }
         public double coolDownReduction { get; set; }
         public double lifeSteal { get; set; }
+        public double normalLifeSteal { get; set; }
+        public double skillLifeSteal { get; set; }
         public double amplifierToMonster { get; set; }
         public double trapDamage { get; set; }
+        public double bonusCoin { get; set; }
         public double gainExp { get; set; }
+        public double baseExp { get; set; }
+        public double bonusExp { get; set; }
         public string startDtm { get; set; }
         public double duration { get; set; }
         public double mmrBefore { get; set; }
+        public double mmrGain { get; set; }
+        public double mmrAfter { get; set; }
         public double playTime { get; set; }
         public double watchTime { get; set; }
         public double totalTime { get; set; }
@@ -191,6 +242,7 @@ namespace BserClient.Types
         public double giveUp { get; set; }
         public double teamSpectator { get; set; }
         public double routeIdOfStart { get; set; }
+        public double routeSlotId { get; set; }
         public string placeOfStart { get; set; }
         public double mmrAvg { get; set; }
         public double teamKill { get; set; }
@@ -204,6 +256,15 @@ namespace BserClient.Types
         public string killerWeapon { get; set; }
         public double killerUserNum2 { get; set; }
         public double killerUserNum3 { get; set; }
+        public double fishingCount { get; set; }
+        public double useEmoticonCount { get; set; }
+        public string expireDtm { get; set; }
+        public double traitFirstCore { get; set; }
+        public List<int> traitFirstSub { get; set; }
+        public List<int> traitSecondSub { get; set; }
+        public List<int> airSupplyOpenCount { get; set; }
+        public List<int> foodCraftCount { get; set; }
+        public List<int> beverageCraftCount { get; set; }
     }
 
     [ExcludeFromCodeCoverage]
@@ -219,6 +280,7 @@ namespace BserClient.Types
         public double rankSize { get; set; }
         public double totalGames { get; set; }
         public double totalWins { get; set; }
+        public double totalTeamKills { get; set; }
         public double rankPercent { get; set; }
         public double averageRank { get; set; }
         public double averageKills { get; set; }
@@ -283,23 +345,23 @@ namespace BserClient.Types
     }
 
     [ExcludeFromCodeCoverage]
-    public class RecommendWeaponResult 
+    public class RecommendWeaponResult
     {
-        public RecommendWeaponRouteDesc recommendWeaponDesc {get; set;}
-        public RecommendWeaponRouteData recommendWeaponRoute {get; set;}
+        public RecommendWeaponRouteDesc recommendWeaponDesc { get; set; }
+        public RecommendWeaponRouteData recommendWeaponRoute { get; set; }
     }
 
 
     [ExcludeFromCodeCoverage]
-    public class freeCharactersResult 
+    public class freeCharactersResult
     {
-        public List<double> freeCharacters {get; set;}
+        public List<double> freeCharacters { get; set; }
     }
 
     [ExcludeFromCodeCoverage]
-    public class l10nData 
+    public class l10nData
     {
-        public string l10Path {get; set;}
+        public string l10Path { get; set; }
     }
 
 }
