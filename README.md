@@ -11,6 +11,8 @@ Most of the documentation can be found at
 
 Havent done too many C# projects. Free feel to have any pr you believe can improve this project.
 
+Need to redo this project.
+
 ### Install
 
 The initial version is 
